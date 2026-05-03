@@ -1,0 +1,199 @@
+/* =========================================================
+   Esplora il Museo — Design Tokens
+   Museo Nazionale del Risorgimento Italiano
+   Extracted from prova_sito_web/css/style.css + style2.css
+   ========================================================= */
+
+:root {
+  /* ── BRAND COLORS ──────────────────────────────────────── */
+  /* Primary red from museum logo — strong, warm, authoritative.
+     The same red that appears in the ! of the "!R" logo mark. */
+  --emu-red-500:        #dc2626;   /* primary action, brand */
+  --emu-red-600:        #b91c1c;   /* primary :hover */
+  --emu-red-700:        #991b1b;   /* primary :active */
+
+  /* Brand dark — the charcoal of the "R" in the logo.
+     Also used as text color throughout. */
+  --emu-charcoal-900:   #202124;   /* main text */
+  --emu-charcoal-700:   #3c4043;   /* secondary text / nav links */
+  --emu-charcoal-500:   #5f6368;   /* tertiary / muted text */
+
+  /* ── NEUTRALS ──────────────────────────────────────────── */
+  --emu-white:          #ffffff;   /* surface / navbar */
+  --emu-gray-50:        #f8f9fa;   /* page background */
+  --emu-gray-100:       #f1f3f4;   /* hover states, chip fills */
+  --emu-gray-200:       #ececec;   /* card border */
+  --emu-gray-300:       #e6e6e6;   /* divider, nav bottom-border */
+  --emu-gray-400:       #dadce0;   /* outline-secondary border */
+
+  /* ── ACCENT ────────────────────────────────────────────── */
+  /* Google-blue kept from the original stylesheet, used ONLY
+     for link/nav-link active states and focus rings.
+     Do not use for primary CTAs — that's what --emu-red is for. */
+  --emu-blue-600:       #1a73e8;   /* link active, focus outline */
+  --emu-blue-100:       #e8f0fe;   /* active list-group fill */
+  --emu-blue-200:       #c5d8fd;   /* active list-group border */
+
+  /* ── SEMANTIC ──────────────────────────────────────────── */
+  --emu-bg:             var(--emu-gray-50);
+  --emu-surface:        var(--emu-white);
+  --emu-surface-hover:  var(--emu-gray-100);
+  --emu-fg:             var(--emu-charcoal-900);
+  --emu-fg-muted:       var(--emu-charcoal-500);
+  --emu-fg-subtle:      var(--emu-charcoal-700);
+  --emu-border:         var(--emu-gray-300);
+  --emu-border-strong:  var(--emu-gray-400);
+  --emu-primary:        var(--emu-red-500);
+  --emu-primary-hover:  var(--emu-red-600);
+  --emu-primary-active: var(--emu-red-700);
+  --emu-link-active:    var(--emu-blue-600);
+  --emu-focus:          var(--emu-blue-600);
+
+  /* Scrim on hero imagery — keeps white titles readable */
+  --emu-hero-scrim:     rgba(0, 0, 0, 0.45);
+
+  /* ── TYPOGRAPHY ────────────────────────────────────────── */
+  /* System stack — matches the reference exactly. No webfont
+     is loaded. This is intentional: the museum site ships fast
+     and inherits the user's platform UI font. */
+  --emu-font-sans:
+    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+
+  /* A serif stack is NOT used in the reference site but is
+     provided here for design materials (slides, editorial
+     layouts) that want to echo the 19th-century paintings
+     used as profile icons. */
+  --emu-font-serif:
+    "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+
+  /* Type scale — derived from reference .navbar-brand, h2 in
+     .intestation (clamp), .profile-card h3, .profile-card p,
+     .text-secondary small, etc. */
+  --emu-fs-hero:        clamp(1.25rem, 4vw, 2rem);    /* 20–32 px */
+  --emu-fs-h1:          1.75rem;   /* 28 px */
+  --emu-fs-h2:          1.5rem;    /* 24 px — .h3 h2-lg */
+  --emu-fs-h3:          1.15rem;   /* 18.4 px — profile-card h3 */
+  --emu-fs-brand:       1.1rem;    /* 17.6 px — navbar brand text */
+  --emu-fs-body:        1rem;      /* 16 px */
+  --emu-fs-body-sm:     0.95rem;   /* 15.2 px — profile-card p */
+  --emu-fs-small:       0.875rem;  /* 14 px — .small */
+  --emu-fs-xs:          0.8rem;    /* 12.8 px */
+
+  --emu-fw-regular:     400;
+  --emu-fw-semibold:    600;
+  --emu-fw-bold:        700;
+
+  --emu-lh-tight:       1.3;       /* headings */
+  --emu-lh-body:        1.6;       /* body copy */
+  --emu-lh-relaxed:     1.7;       /* long-form paragraphs */
+
+  --emu-ls-heading:     0.2px;     /* h1/h2/h3 letter-spacing */
+
+  /* ── SPACING ───────────────────────────────────────────── */
+  /* Mirrors the Bootstrap 0.25 rem grid we already use via
+     p-3, g-3, mb-3, gap-3 utility classes. Named aliases for
+     the values we actually reach for. */
+  --emu-sp-1:           0.25rem;   /*  4 px */
+  --emu-sp-2:           0.5rem;    /*  8 px */
+  --emu-sp-3:           0.75rem;   /* 12 px */
+  --emu-sp-4:           1rem;      /* 16 px — default p-3 target */
+  --emu-sp-5:           1.25rem;   /* 20 px */
+  --emu-sp-6:           1.5rem;    /* 24 px — .p-3 on profile-card */
+  --emu-sp-8:           2rem;      /* 32 px */
+  --emu-sp-10:          2.5rem;    /* 40 px — section gaps */
+  --emu-sp-12:          3rem;      /* 48 px */
+
+  /* ── RADII ─────────────────────────────────────────────── */
+  --emu-radius-sm:      4px;       /* focus-visible corner */
+  --emu-radius-md:      8px;       /* toggler, accordion-item */
+  --emu-radius-lg:      10px;      /* buttons, profile-card btn */
+  --emu-radius-xl:      14px;      /* dropdown-menu */
+  --emu-radius-2xl:     18px;      /* .rounded-4 — profile-card */
+  --emu-radius-pill:    999px;
+
+  /* ── SHADOWS ───────────────────────────────────────────── */
+  /* Soft Google-Sites-ish elevations. Cool charcoal tint
+     (60,64,67) rather than pure black. */
+  --emu-shadow-sm:      0 2px 8px  rgba(60, 64, 67, 0.10);
+  --emu-shadow-md:      0 8px 24px rgba(60, 64, 67, 0.10);
+  --emu-shadow-lg:      0 8px 24px rgba(60, 64, 67, 0.18);
+  --emu-shadow-dropdown:0 12px 28px rgba(60, 64, 67, 0.18);
+
+  /* ── BORDERS ───────────────────────────────────────────── */
+  --emu-border-width:   1px;
+  --emu-divider:        1px solid var(--emu-border);
+
+  /* ── MOTION ────────────────────────────────────────────── */
+  /* Short, functional transitions — no bouncing, no hero
+     animations. Matches the utilitarian tone of the site.
+     Respect prefers-reduced-motion at usage site. */
+  --emu-dur-fast:       0.15s;     /* links, nav, accordion */
+  --emu-dur-base:       0.2s;      /* cards, buttons */
+  --emu-ease:           ease;
+
+  /* ── LAYOUT ────────────────────────────────────────────── */
+  --emu-container-max:  1140px;    /* Bootstrap default container */
+  --emu-hero-h:         clamp(180px, 40vh, 320px);
+  --emu-touch-min:      44px;      /* WCAG touch target */
+}
+
+
+/* =========================================================
+   SEMANTIC ELEMENT STYLES
+   Drop this file on any page and base typography will match.
+   ========================================================= */
+
+html, body {
+  font-family: var(--emu-font-sans);
+  color: var(--emu-fg);
+  background-color: var(--emu-bg);
+  font-size: 16px;
+  line-height: var(--emu-lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: var(--emu-ls-heading);
+  line-height: var(--emu-lh-tight);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-weight: var(--emu-fw-semibold);
+  color: var(--emu-fg);
+}
+
+h1 { font-size: var(--emu-fs-h1); }
+h2 { font-size: var(--emu-fs-h2); }
+h3 { font-size: var(--emu-fs-h3); }
+
+p {
+  line-height: var(--emu-lh-relaxed);
+  margin-bottom: var(--emu-sp-4);
+}
+
+a {
+  color: var(--emu-fg);
+  text-decoration: none;
+  transition: color var(--emu-dur-fast) var(--emu-ease);
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+small, .emu-small {
+  font-size: var(--emu-fs-small);
+  color: var(--emu-fg-muted);
+}
+
+code, pre, kbd {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--emu-focus);
+  outline-offset: 3px;
+  border-radius: var(--emu-radius-sm);
+}

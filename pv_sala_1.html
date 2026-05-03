@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Il Piccolo Visitatore — Sala 1 · Esplora il Museo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
+</head>
+<body class="bg-body-tertiary" data-profile="pv" data-sala="1">
+
+
+  <nav class="navbar bg-body border-bottom sticky-top" aria-label="Navigazione principale">
+    <div class="container">
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav"
+              aria-controls="offcanvasNav"
+              data-it-aria-label="Apri menu di navigazione" data-en-aria-label="Open navigation menu"
+              aria-label="Apri menu di navigazione">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-mark" src="img/logo.jpg"
+             data-it-alt="Logo del Museo Nazionale del Risorgimento Italiano"
+             data-en-alt="Logo of the National Museum of the Italian Unification"
+             alt="Logo del Museo Nazionale del Risorgimento Italiano" loading="lazy" />
+        <span><h3>Esplora il Museo</h3></span>
+      </a>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
+        <div class="offcanvas-header border-bottom">
+          <a class="offcanvas-title h5 fw-semibold text-decoration-none text-dark" id="offcanvasNavLabel" href="index.html">Esplora il Museo</a>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                  data-it-aria-label="Chiudi menu" data-en-aria-label="Close menu" aria-label="Chiudi menu"></button>
+        </div>
+        <div class="offcanvas-body">
+          <section class="profile-bar p-3 rounded-4 border mb-3" data-profile-bar aria-live="polite">
+            <div class="d-flex align-items-start gap-3">
+              <div class="profile-icon d-flex align-items-center justify-content-center rounded-circle" data-profile-icon>
+                <span aria-hidden="true">👤</span>
+              </div>
+              <div>
+                <div class="small text-secondary" data-profile-label data-it="Profilo attivo" data-en="Active profile">Profilo attivo</div>
+                <div class="fw-semibold" data-profile-name>Nessun profilo selezionato</div>
+                <div class="small text-secondary" data-profile-sub>Scegli un profilo per iniziare.</div>
+              </div>
+            </div>
+          </section>
+          <nav class="mb-2" aria-label="Link principali">
+            <a class="nav-link px-0 fw-semibold" href="index.html" data-bs-dismiss="offcanvas" data-it="Home page" data-en="Home page">Home page</a>
+          </nav>
+          <hr class="my-3" />
+          <div class="accordion" id="profilesAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-piccolo">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-piccolo" aria-expanded="false" aria-controls="c-piccolo"
+                        data-it="Il Piccolo Visitatore" data-en="The Young Visitor">Il Piccolo Visitatore</button>
+              </h2>
+              <div id="c-piccolo" class="accordion-collapse collapse" aria-labelledby="h-piccolo" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action " href="pv_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action active" href="pv_sala_1.html" aria-current="page" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action " href="pv_sala_2.html" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action " href="pv_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-curioso">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-curioso" aria-expanded="false" aria-controls="c-curioso"
+                        data-it="Il Curioso" data-en="The Curious">Il Curioso</button>
+              </h2>
+              <div id="c-curioso" class="accordion-collapse collapse" aria-labelledby="h-curioso" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action " href="cu_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action " href="cu_sala_1.html" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action " href="cu_sala_2.html" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action " href="cu_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-visionario">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-visionario" aria-expanded="false" aria-controls="c-visionario"
+                        data-it="Il Visionario" data-en="The Visionary">Il Visionario</button>
+              </h2>
+              <div id="c-visionario" class="accordion-collapse collapse" aria-labelledby="h-visionario" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action " href="vi_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action " href="vi_sala_1.html" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action " href="vi_sala_2.html" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action " href="vi_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-esperto">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-esperto" aria-expanded="false" aria-controls="c-esperto"
+                        data-it="L'Esperto" data-en="The Expert">L'Esperto</button>
+              </h2>
+              <div id="c-esperto" class="accordion-collapse collapse" aria-labelledby="h-esperto" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action " href="es_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action " href="es_sala_1.html" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action " href="es_sala_2.html" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action " href="es_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-3" />
+          <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+            <div class="lang-inline" role="group" aria-label="Lingua">
+              <button type="button" data-lang="it" aria-pressed="true">🇮🇹 IT</button>
+              <button type="button" data-lang="en" aria-pressed="false">🇬🇧 EN</button>
+            </div>
+            <a class="nav-link px-0 fw-semibold" href="language.html" data-it="🌐 Cambia lingua" data-en="🌐 Choose your language">🌐 Cambia lingua</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="intestation room-pv-1">
+    <h1 data-it="Sala 1" data-en="Room 1">Sala 1</h1>
+  </div>
+
+  <main id="main" class="py-4 py-lg-5" tabindex="-1">
+    <div class="container">
+
+      <section id="sala-introduction" class="mb-4">
+        <div class="d-flex flex-column flex-md-row align-items-start gap-4 mb-3">
+          <div class="flex-grow-1">
+            <h2 class="h3 mb-3" data-it="Conosci il Risorgimento?" data-en="Do you know the Risorgimento?"> Conosci il Risorgimento?</h2>
+            <div id="sala-intro-text">
+              <p class="text-secondary mb-0"
+                 data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                 data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          
+              </p>
+          </div>
+
+        </div>
+
+        <button type="button" class="btn btn-outline-secondary btn-listen"
+                data-read-target="sala-intro-text"
+                aria-pressed="false"
+                data-it-aria-label="Ascolta il testo della sezione"
+                data-en-aria-label="Listen to the section text"
+                aria-label="Ascolta il testo della sezione">
+          <span class="speaker-ico" aria-hidden="true">🔊</span>
+          <span class="btn-label" data-it="🔊 Ascolta" data-en="🔊 Listen">🔊 Ascolta</span>
+        </button>
+        <!-- TODO: sostituire con ElevenLabs via Netlify Functions per voci più naturali -->
+      </section>
+
+      <section id="accordion-media" class="mb-5">
+
+        <!-- BLOCCO 1 — primo aperto -->
+
+        <div class="accordion mb-3" id="salaAccordion1_pv_1">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="sala1_pv_1">
+              <button class="accordion-button" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#sala1Content_pv_1"
+                      aria-expanded="true" aria-controls="sala1Content_pv_1"
+                      data-it="Chi è Vittorio Emanuele II?" data-en="Who is Vittorio Emanuele II?">
+                Chi è Vittorio Emanuele II?
+              </button>
+            </h2>
+            <div id="sala1Content_pv_1" class="accordion-collapse collapse show"
+                aria-labelledby="sala1_pv_1" data-bs-parent="#salaAccordion1_pv_1">
+              <div class="accordion-body">
+                <p class="text-secondary mb-0"
+                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Immagine blocco 1 — sempre visibile -->
+        <div class="mb-4">
+          <div id="carousel_pv_1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active natural">
+                <img src="img/room_1/vittorio_emanuele_ritratto.jpg" class="d-block w-100 rounded-4"
+                    data-it-alt="Ritratto di Vittorio Emanuele II"
+                    data-en-alt="Portrait of Vittorio Emanuele II"
+                    alt="Ritratto di Vittorio Emanuele II" loading="lazy" />
+              </div>
+              <div class="carousel-item natural">
+                <img src="img/room_1/cimeli.jpg" class="d-block w-100 rounded-4"
+                    data-it-alt="Cimeli di Vittorio Emanuele II"
+                    data-en-alt="Relics of Vittorio Emanuele II"
+                    alt="Cimeli" loading="lazy" />
+              </div>
+            </div>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="0"
+                      class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
+            </button>
+          </div>
+        </div>
+
+
+
+        <!-- BLOCCO 2 — chiuso -->
+        <div class="accordion mb-3" id="salaAccordion2_pv_1">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="sala2_pv_1">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#sala2Content_pv_1"
+                      aria-expanded="false" aria-controls="sala2Content_pv_1"
+                      data-it="Chi sono Cavour e Garibaldi?" data-en="Who were Cavour and Garibaldi?">
+                Chi sono Cavour e Garibaldi?
+              </button>
+            </h2>
+            <div id="sala2Content_pv_1" class="accordion-collapse collapse"
+                aria-labelledby="sala2_pv_1" data-bs-parent="#salaAccordion2_pv_1">
+              <div class="accordion-body">
+                <p class="text-secondary mb-0"
+                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Immagine blocco 2 — sempre visibile -->
+        <!-- Immagine blocco 2 — carosello sempre visibile -->
+          <div class="mb-4">
+            <div id="carousel_pv_1" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active natural">
+                  <img src="img/room_1/busto_cavour.jpg" class="d-block w-100 rounded-4"
+                      data-it-alt="Busto di Cavour"
+                      data-en-alt="Bust of Cavour"
+                      alt="Busto di Cavour" loading="lazy" />
+                </div>
+                <div class="carousel-item natural">
+                  <img src="img/room_1/garibaldi_busto.jpg" class="d-block w-100 rounded-4"
+                      data-it-alt="Ritratto di Garibaldi"
+                      data-en-alt="Portrait of Garibaldi"
+                      alt="Ritratto di Garibaldi" loading="lazy" />
+                </div>
+              </div>
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
+              </button>
+            </div>
+          </div>
+        <!-- Timeline -->
+        <h2 class="h4 text-center mb-3" data-it="Scorri la linea del Tempo!" data-en="Scroll through the timeline!">Scorri la linea del Tempo!</h2>
+        <div class="timeline-wrap">
+          <iframe
+            src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vS2gLYWsLv5zWrkqOneofsC8Jgi3sUN_Wzoq6bLOev7zKtEOlzHC65ofRzCiRKMELVb77d_HjFbgLbU&font=Default&lang=it&initial_zoom=1&width=100%25&height=450"
+            title="Timeline del Risorgimento Italiano"
+            width="100%" height="450" allowfullscreen frameborder="0" loading="lazy"></iframe>
+        </div>
+
+      </section>
+
+      <section class="next-sala-bar mb-4">
+        <a class="btn btn-primary" href="pv_sala_0.html" data-it="← Intro" data-en="← Intro">← Intro</a>
+        <a class="btn btn-primary" href="pv_sala_2.html" data-it="Sala 2 →" data-en="Room 2 →">Sala 2 →</a>
+      </section>
+
+      <footer class="pb-4 pt-3">
+        <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 text-secondary small">
+          <span>© Esplora il Museo</span>
+          <span class="text-sm-end" data-it="Museo Nazionale del Risorgimento Italiano — Torino"
+                data-en="National Museum of the Italian Unification — Turin">Museo Nazionale del Risorgimento Italiano — Torino</span>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Script Botpress -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2026/02/27/15/20260227151357-NCML2CRD.js" defer></script>
+  <script>
+    window.botpress.on('webchat:initialized', () => {
+      window.botpress.updateUser({
+        data: {
+          profile: "Il piccolo visitatore",
+          current_room: "room_1"
+        }
+      })
+    })
+    window.botpress.on('webchat:opened', async () => {
+      await window.botpress.sendEvent({ type: 'trigger' })
+    })
+  </script>
+</body>
+</html>

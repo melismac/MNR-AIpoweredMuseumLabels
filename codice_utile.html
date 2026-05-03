@@ -1,0 +1,104 @@
+<!--pezzi di codice utili-->
+
+<!--intro + text-->
+
+<div id="sala-intro-text">
+    <p class="text-secondary mb-0"
+        data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          
+    </p>
+</div>
+
+        <!-- BLOCCO 1 — primo aperto -->
+        <div class="accordion mb-3" id="salaAccordion1_pv_1">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="sala1_pv_1">
+              <button class="accordion-button" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#sala1Content_pv_1"
+                      aria-expanded="true" aria-controls="sala1Content_pv_1"
+                      data-it="Chi era Vittorio Emanuele II?" data-en="Who was Vittorio Emanuele II?">
+                Chi era Vittorio Emanuele II?
+              </button>
+            </h2>
+            <div id="sala1Content_pv_1" class="accordion-collapse collapse show"
+                aria-labelledby="sala1_pv_1" data-bs-parent="#salaAccordion1_pv_1">
+              <div class="accordion-body">
+                <p class="text-secondary mb-0"
+                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Immagine blocco 1 — sempre visibile -->
+        <div class="mb-4">
+          <img src="img/room_1/vittorio_emanuele_ritratto.jpg"
+              class="d-block w-100 rounded-4 single-img"
+              data-it-alt="Ritratto di Vittorio Emanuele II di Giuseppe Camino."
+              data-en-alt="Portrait of Vittorio Emanuele II by Giuseppe Camino."
+              alt="Ritratto di Vittorio Emanuele II di Giuseppe Camino."
+              loading="lazy" />
+        </div>
+
+        <!-- BLOCCO 2 — chiuso -->
+        <div class="accordion mb-3" id="salaAccordion2_pv_1">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="sala2_pv_1">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#sala2Content_pv_1"
+                      aria-expanded="false" aria-controls="sala2Content_pv_1"
+                      data-it="Chi sono Cavour e Garibaldi?" data-en="Who were Cavour and Garibaldi?">
+                Chi sono Cavour e Garibaldi?
+              </button>
+            </h2>
+            <div id="sala2Content_pv_1" class="accordion-collapse collapse"
+                aria-labelledby="sala2_pv_1" data-bs-parent="#salaAccordion2_pv_1">
+              <div class="accordion-body">
+                <p class="text-secondary mb-0"
+                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Immagine blocco 2 — sempre visibile -->
+        <!-- Immagine blocco 2 — carosello sempre visibile -->
+          <div class="mb-4">
+            <div id="carousel_pv_1" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active natural">
+                  <img src="img/room_1/busto_cavour.jpg" class="d-block w-100 rounded-4"
+                      data-it-alt="Busto di Cavour"
+                      data-en-alt="Bust of Cavour"
+                      alt="Busto di Cavour" loading="lazy" />
+                </div>
+                <div class="carousel-item natural">
+                  <img src="img/room_1/garibaldi_busto.jpg" class="d-block w-100 rounded-4"
+                      data-it-alt="Ritratto di Garibaldi"
+                      data-en-alt="Portrait of Garibaldi"
+                      alt="Ritratto di Garibaldi" loading="lazy" />
+                </div>
+              </div>
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
+              </button>
+            </div>
+          </div>

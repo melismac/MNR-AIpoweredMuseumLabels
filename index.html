@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" data-it="Guida digitale del Museo Nazionale del Risorgimento Italiano. Scegli il tuo profilo e lasciati accompagnare sala dopo sala." data-en="Digital guide of the National Museum of the Italian Unification. Pick your profile and explore room by room." content="Guida digitale del Museo Nazionale del Risorgimento Italiano." />
+  <title>Esplora il Museo — Museo Nazionale del Risorgimento Italiano</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
+</head>
+<body class="bg-body-tertiary">
+
+  <a class="skip-link" href="#main" data-it="Vai al contenuto principale" data-en="Skip to main content">Vai al contenuto principale</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar bg-body border-bottom sticky-top" aria-label="Navigazione principale">
+    <div class="container">
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav"
+              aria-controls="offcanvasNav"
+              data-it-aria-label="Apri menu di navigazione" data-en-aria-label="Open navigation menu"
+              aria-label="Apri menu di navigazione">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-mark" src="img/logo.jpg"
+             data-it-alt="Logo del Museo Nazionale del Risorgimento Italiano"
+             data-en-alt="Logo of the National Museum of the Italian Unification"
+             alt="Logo del Museo Nazionale del Risorgimento Italiano" loading="lazy" />
+        <span><h3>Esplora il Museo</h3></span>
+      </a>
+
+      <!-- OFFCANVAS -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
+        <div class="offcanvas-header border-bottom">
+          <a class="offcanvas-title h5 fw-semibold text-decoration-none text-dark" id="offcanvasNavLabel" href="index.html">Esplora il Museo</a>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                  data-it-aria-label="Chiudi menu" data-en-aria-label="Close menu" aria-label="Chiudi menu"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <!-- Profile bar -->
+          <section class="profile-bar p-3 rounded-4 border mb-3" data-profile-bar aria-live="polite">
+            <div class="d-flex align-items-start gap-3">
+              <div class="profile-icon d-flex align-items-center justify-content-center rounded-circle" data-profile-icon>
+                <span aria-hidden="true">👤</span>
+              </div>
+              <div>
+                <div class="small text-secondary" data-profile-label data-it="Profilo attivo" data-en="Active profile">Profilo attivo</div>
+                <div class="fw-semibold" data-profile-name>Nessun profilo selezionato</div>
+                <div class="small text-secondary" data-profile-sub>Scegli un profilo per iniziare.</div>
+              </div>
+            </div>
+          </section>
+
+          <nav class="mb-2" aria-label="Link principali">
+            <a class="nav-link px-0 fw-semibold active" aria-current="page" href="index.html" data-bs-dismiss="offcanvas"
+               data-it="Home page" data-en="Home page">Home page</a>
+          </nav>
+
+          <hr class="my-3" />
+
+          <div class="accordion" id="profilesAccordion">
+            <!-- PV -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-piccolo">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-piccolo" aria-expanded="false" aria-controls="c-piccolo"
+                        data-it="Il Piccolo Visitatore" data-en="The Young Visitor">Il Piccolo Visitatore</button>
+              </h2>
+              <div id="c-piccolo" class="accordion-collapse collapse" aria-labelledby="h-piccolo" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action" href="pv_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action" href="pv_sala_1.html" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action" href="pv_sala_2.html" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action" href="pv_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- CU -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-curioso">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-curioso" aria-expanded="false" aria-controls="c-curioso"
+                        data-it="Il Curioso" data-en="The Curious">Il Curioso</button>
+              </h2>
+              <div id="c-curioso" class="accordion-collapse collapse" aria-labelledby="h-curioso" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action" href="cu_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action" href="cu_sala_1.html" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action" href="cu_sala_2.html" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action" href="cu_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- VI -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-visionario">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-visionario" aria-expanded="false" aria-controls="c-visionario"
+                        data-it="Il Visionario" data-en="The Visionary">Il Visionario</button>
+              </h2>
+              <div id="c-visionario" class="accordion-collapse collapse" aria-labelledby="h-visionario" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action" href="vi_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action" href="vi_sala_1.html" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action" href="vi_sala_2.html" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action" href="vi_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ES -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-esperto">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-esperto" aria-expanded="false" aria-controls="c-esperto"
+                        data-it="L'Esperto" data-en="The Expert">L'Esperto</button>
+              </h2>
+              <div id="c-esperto" class="accordion-collapse collapse" aria-labelledby="h-esperto" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action" href="es_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action" href="es_sala_1.html" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action" href="es_sala_2.html" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action" href="es_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-3" />
+
+          <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+            <div class="lang-inline" role="group" aria-label="Lingua">
+              <button type="button" data-lang="it" aria-pressed="true">🇮🇹 IT</button>
+              <button type="button" data-lang="en" aria-pressed="false">🇬🇧 EN</button>
+            </div>
+            <a class="nav-link px-0 fw-semibold" href="language.html"
+               data-it="🌐 Cambia lingua" data-en="🌐 Choose your language">🌐 Cambia lingua</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- INTRO -->
+  <div class="intestation">
+    <h1 data-it="Scopri il Museo Nazionale del Risorgimento Italiano"
+        data-en="Discover the National Museum of the Italian Unification">
+      Scopri il Museo Nazionale del Risorgimento Italiano
+    </h1>
+  </div>
+
+  <!-- MAIN -->
+  <main id="main" class="py-4 py-lg-5" tabindex="-1">
+    <div class="container">
+      <section id="profili" class="mb-5 p-0 p-md-3">
+        <div class="mb-4 text-center">
+          <h2 class="h3 fw-semibold mb-3"
+              data-it="Seleziona il tuo profilo" data-en="Choose your profile">Seleziona il tuo profilo</h2>
+          <p class="text-secondary mb-0"
+             data-it="Scegli il <b>profilo</b> che ti somiglia di più e lasciati guidare: nel momento in cui ti riconosci, inizia il tuo viaggio tra le storie del Museo Nazionale del Risorgimento Italiano. Ogni profilo ti condurrà ad una narrazione pensata per accompagnarti con lo stile e la voce più vicini al tuo modo di esplorare la storia. Sfoglia le sale e accedi alla <b>guida virtuale</b> presente in ogni sezione!"
+             data-en="Pick the <b>profile</b> that feels most like you and let yourself be guided: the moment you recognise yourself, your journey begins through the stories of the National Museum of the Italian Unification. Each profile leads you through a narrative tuned to your way of exploring history. Browse the rooms and meet the <b>virtual guide</b> in every section!">
+            Scegli il <b>profilo</b> che ti somiglia di più e lasciati guidare: nel momento in cui ti riconosci, inizia il tuo viaggio tra le storie del Museo Nazionale del Risorgimento Italiano.
+          </p>
+        </div>
+
+        <div class="row g-3 g-lg-4">
+          <!-- PV -->
+          <div class="col-12 col-md-6">
+            <article class="profile-card">
+              <img src="img/profiles/altamura_icon.jpeg"
+                   data-it-alt="Dipinto di un fanciullo con bandiera tricolore, di Saverio Altamura"
+                   data-en-alt="Painting of a boy with tricolour flag, by Saverio Altamura"
+                   alt="Dipinto di un fanciullo con bandiera tricolore" loading="lazy" />
+              <div class="card-body">
+                <h3 data-it="Il piccolo visitatore" data-en="The young visitor">Il piccolo visitatore</h3>
+                <p data-it="Scopri il Museo come un grande viaggio pieno di curiosità e meraviglia, dove anche i più piccoli possono divertirsi! Tra oggetti, personaggi e storie sorprendenti, passo dopo passo scopri come è nata l'Italia."
+                   data-en="Discover the Museum as a great journey full of curiosity and wonder, where even the youngest can have fun! Through objects, characters and surprising stories, step by step you'll find out how Italy came to be.">
+                  Scopri il Museo come un grande viaggio pieno di curiosità e meraviglia, dove anche i più piccoli possono divertirsi! Tra oggetti, personaggi e storie sorprendenti, passo dopo passo scopri come è nata l'Italia.
+                </p>
+                <a class="btn btn-primary" href="pv_sala_0.html"
+                   onclick="return EMU_selectProfile('pv', this.href)"
+                   data-it="Inizia l'avventura" data-en="Start the adventure">Inizia l'avventura</a>
+              </div>
+            </article>
+          </div>
+          <!-- CU -->
+          <div class="col-12 col-md-6">
+            <article class="profile-card">
+              <img src="img/profiles/cospiratore_romantico_icon.jpg"
+                   data-it-alt="Ritratto di un cospiratore romantico del Risorgimento"
+                   data-en-alt="Portrait of a romantic Risorgimento conspirator"
+                   alt="Ritratto di un cospiratore romantico" loading="lazy" />
+              <div class="card-body">
+                <h3 data-it="Il curioso" data-en="The curious">Il curioso</h3>
+                <p data-it="Ti piace scoprire e farti domande? Anche se non conosci ancora bene il Risorgimento, o ne conservi solo un ricordo un po' sbiadito, il Museo è il luogo ideale per lasciarti guidare da racconti, oggetti e personaggi che ti accompagneranno, passo dopo passo, nella storia d'Italia."
+                   data-en="Do you love to discover and ask questions? Even if you don't know the Risorgimento well yet, or hold only a faded memory of it, the Museum is the perfect place to be guided by stories, objects and characters, step by step, through Italian history.">
+                  Ti piace scoprire e farti domande? Anche se non conosci ancora bene il Risorgimento, o ne conservi solo un ricordo un po' sbiadito, il Museo è il luogo ideale per lasciarti guidare da racconti, oggetti e personaggi che ti accompagneranno, passo dopo passo, nella storia d'Italia.
+                </p>
+                <a class="btn btn-primary" href="cu_sala_0.html"
+                   onclick="return EMU_selectProfile('cu', this.href)"
+                   data-it="Scopri il Risorgimento" data-en="Discover the Risorgimento">Scopri il Risorgimento</a>
+              </div>
+            </article>
+          </div>
+          <!-- VI -->
+          <div class="col-12 col-md-6">
+            <article class="profile-card">
+              <img src="img/profiles/garibaldi_marsala_icon.jpeg"
+                   data-it-alt="Sbarco di Garibaldi a Marsala"
+                   data-en-alt="Garibaldi's landing at Marsala"
+                   alt="Sbarco di Garibaldi a Marsala" loading="lazy" />
+              <div class="card-body">
+                <h3 data-it="Il visionario" data-en="The visionary">Il visionario</h3>
+                <p data-it="Credi nel potere delle idee capaci di cambiare il mondo e unire le persone? Il Museo celebra chi ha saputo mettersi al servizio di un ideale comune. Qui scoprirai come il coraggio di pochi ha acceso la speranza di molti e costruito le basi del nostro presente."
+                   data-en="Do you believe in the power of ideas that change the world and bring people together? The Museum celebrates those who served a common ideal. Here you'll discover how the courage of a few lit hope in many and laid the foundations of our present.">
+                  Credi nel potere delle idee capaci di cambiare il mondo e unire le persone? Il Museo celebra chi ha saputo mettersi al servizio di un ideale comune. Qui scoprirai come il coraggio di pochi ha acceso la speranza di molti e costruito le basi del nostro presente.
+                </p>
+                <a class="btn btn-primary" href="vi_sala_0.html"
+                   onclick="return EMU_selectProfile('vi', this.href)"
+                   data-it="Tuffati nel passato" data-en="Dive into the past">Tuffati nel passato</a>
+              </div>
+            </article>
+          </div>
+          <!-- ES -->
+          <div class="col-12 col-md-6">
+            <article class="profile-card">
+              <img src="img/profiles/cavour_icon.jpeg"
+                   data-it-alt="Ritratto di Camillo Benso, Conte di Cavour"
+                   data-en-alt="Portrait of Camillo Benso, Count of Cavour"
+                   alt="Ritratto di Camillo Benso, Conte di Cavour" loading="lazy" />
+              <div class="card-body">
+                <h3 data-it="L'esperto" data-en="The expert">L'esperto</h3>
+                <p data-it="Cerchi di comprendere davvero il perché delle cose? Il Museo è la tua biblioteca vivente: un luogo dove ogni oggetto diventa chiave per interpretare il passato e comprendere meglio il mondo di oggi."
+                   data-en="Do you try to truly understand the why of things? The Museum is your living library: a place where every object becomes a key to read the past and better grasp today's world.">
+                  Cerchi di comprendere davvero il perché delle cose? Il Museo è la tua biblioteca vivente: un luogo dove ogni oggetto diventa chiave per interpretare il passato e comprendere meglio il mondo di oggi.
+                </p>
+                <a class="btn btn-primary" href="es_sala_0.html"
+                   onclick="return EMU_selectProfile('es', this.href)"
+                   data-it="Riscopri la storia" data-en="Rediscover history">Riscopri la storia</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <footer class="pb-4 pt-3">
+        <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 text-secondary small">
+          <span>© Esplora il Museo</span>
+          <span class="text-sm-end" data-it="Museo Nazionale del Risorgimento Italiano — Torino"
+                data-en="National Museum of the Italian Unification — Turin">Museo Nazionale del Risorgimento Italiano — Torino</span>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

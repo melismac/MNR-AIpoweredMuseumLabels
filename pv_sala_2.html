@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Il Piccolo Visitatore — Sala 2 · Esplora il Museo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
+</head>
+<body class="bg-body-tertiary" data-profile="pv" data-sala="2">
+
+  <a class="skip-link" href="#main" data-it="Vai al contenuto principale" data-en="Skip to main content">Vai al contenuto principale</a>
+
+  <nav class="navbar bg-body border-bottom sticky-top" aria-label="Navigazione principale">
+    <div class="container">
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav"
+              aria-controls="offcanvasNav"
+              data-it-aria-label="Apri menu di navigazione" data-en-aria-label="Open navigation menu"
+              aria-label="Apri menu di navigazione">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-mark" src="img/logo.jpg"
+             data-it-alt="Logo del Museo Nazionale del Risorgimento Italiano"
+             data-en-alt="Logo of the National Museum of the Italian Unification"
+             alt="Logo del Museo Nazionale del Risorgimento Italiano" loading="lazy" />
+        <span><h3>Esplora il Museo</h3></span>
+      </a>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
+        <div class="offcanvas-header border-bottom">
+          <a class="offcanvas-title h5 fw-semibold text-decoration-none text-dark" id="offcanvasNavLabel" href="index.html">Esplora il Museo</a>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                  data-it-aria-label="Chiudi menu" data-en-aria-label="Close menu" aria-label="Chiudi menu"></button>
+        </div>
+        <div class="offcanvas-body">
+          <section class="profile-bar p-3 rounded-4 border mb-3" data-profile-bar aria-live="polite">
+            <div class="d-flex align-items-start gap-3">
+              <div class="profile-icon d-flex align-items-center justify-content-center rounded-circle" data-profile-icon>
+                <span aria-hidden="true">👤</span>
+              </div>
+              <div>
+                <div class="small text-secondary" data-profile-label data-it="Profilo attivo" data-en="Active profile">Profilo attivo</div>
+                <div class="fw-semibold" data-profile-name>Nessun profilo selezionato</div>
+                <div class="small text-secondary" data-profile-sub>Scegli un profilo per iniziare.</div>
+              </div>
+            </div>
+          </section>
+          <nav class="mb-2" aria-label="Link principali">
+            <a class="nav-link px-0 fw-semibold" href="index.html" data-bs-dismiss="offcanvas" data-it="Home page" data-en="Home page">Home page</a>
+          </nav>
+          <hr class="my-3" />
+          <div class="accordion" id="profilesAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-piccolo">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-piccolo" aria-expanded="false" aria-controls="c-piccolo"
+                        data-it="Il Piccolo Visitatore" data-en="The Young Visitor">Il Piccolo Visitatore</button>
+              </h2>
+              <div id="c-piccolo" class="accordion-collapse collapse" aria-labelledby="h-piccolo" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action " href="pv_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action " href="pv_sala_1.html" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action active" href="pv_sala_2.html" aria-current="page" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action " href="pv_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-curioso">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-curioso" aria-expanded="false" aria-controls="c-curioso"
+                        data-it="Il Curioso" data-en="The Curious">Il Curioso</button>
+              </h2>
+              <div id="c-curioso" class="accordion-collapse collapse" aria-labelledby="h-curioso" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action " href="cu_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action " href="cu_sala_1.html" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action " href="cu_sala_2.html" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action " href="cu_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-visionario">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-visionario" aria-expanded="false" aria-controls="c-visionario"
+                        data-it="Il Visionario" data-en="The Visionary">Il Visionario</button>
+              </h2>
+              <div id="c-visionario" class="accordion-collapse collapse" aria-labelledby="h-visionario" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action " href="vi_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action " href="vi_sala_1.html" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action " href="vi_sala_2.html" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action " href="vi_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h-esperto">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#c-esperto" aria-expanded="false" aria-controls="c-esperto"
+                        data-it="L'Esperto" data-en="The Expert">L'Esperto</button>
+              </h2>
+              <div id="c-esperto" class="accordion-collapse collapse" aria-labelledby="h-esperto" data-bs-parent="#profilesAccordion">
+                <div class="accordion-body p-0">
+                  <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action " href="es_sala_0.html" data-it="Introduzione" data-en="Introduction">Introduzione</a>
+                    <a class="list-group-item list-group-item-action " href="es_sala_1.html" data-it="Sala 1" data-en="Room 1">Sala 1</a>
+                    <a class="list-group-item list-group-item-action " href="es_sala_2.html" data-it="Sala 2" data-en="Room 2">Sala 2</a>
+                    <a class="list-group-item list-group-item-action " href="es_sala_3.html" data-it="Sala 3" data-en="Room 3">Sala 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-3" />
+          <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+            <div class="lang-inline" role="group" aria-label="Lingua">
+              <button type="button" data-lang="it" aria-pressed="true">🇮🇹 IT</button>
+              <button type="button" data-lang="en" aria-pressed="false">🇬🇧 EN</button>
+            </div>
+            <a class="nav-link px-0 fw-semibold" href="language.html" data-it="🌐 Cambia lingua" data-en="🌐 Choose your language">🌐 Cambia lingua</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="intestation room-pv-2">
+    <h1 data-it="Sala 2" data-en="Room 2">Sala 2</h1>
+  </div>
+
+  <main id="main" class="py-4 py-lg-5" tabindex="-1">
+    <div class="container">
+
+      <section id="sala-introduction" class="mb-4">
+        <div class="d-flex flex-column flex-md-row align-items-start gap-4 mb-3">
+          <div class="flex-grow-1">
+            <h2 class="h3 mb-3" data-it="Sala 2" data-en="Room 2">Sala 2</h2>
+            <div id="sala-intro-text">
+              <p class="text-secondary mb-0"
+                 data-it="Entra nella sala più speciale di tutto il museo: il vero Parlamento Subalpino, conservato esattamente com'era. Qui si riunivano i deputati del Regno di Sardegna, e proprio tra questi banchi si è parlato per la prima volta di un'Italia unita. Alza lo sguardo al soffitto decorato: è un piccolo gioiello!"
+                 data-en="Step into the most special room in the museum: the real Subalpine Parliament, preserved exactly as it was. Here the deputies of the Kingdom of Sardinia gathered, and among these very benches a united Italy was discussed for the first time. Look up at the decorated ceiling — a little jewel!">Entra nella sala più speciale di tutto il museo: il vero Parlamento Subalpino, conservato esattamente com'era. Qui si riunivano i deputati del Regno di Sardegna, e proprio tra questi banchi si è parlato per la prima volta di un'Italia unita. Alza lo sguardo al soffitto decorato: è un piccolo gioiello!</p>
+            </div>
+          </div>
+          <div class="flex-shrink-0" style="max-width: 220px;">
+            <img src="img/room_1/parlamento_subalpino.jpg"
+                 data-it-alt="Aula del Parlamento Subalpino" data-en-alt="Hall of the Subalpine Parliament"
+                 alt="Aula del Parlamento Subalpino"
+                 class="img-fluid rounded-4 shadow-sm" loading="lazy" />
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-outline-secondary btn-listen"
+                data-read-target="sala-intro-text"
+                aria-pressed="false"
+                data-it-aria-label="Ascolta il testo della sezione"
+                data-en-aria-label="Listen to the section text"
+                aria-label="Ascolta il testo della sezione">
+          <span class="speaker-ico" aria-hidden="true">🔊</span>
+          <span class="btn-label" data-it="🔊 Ascolta" data-en="🔊 Listen">🔊 Ascolta</span>
+        </button>
+        <!-- TODO: sostituire con ElevenLabs via Netlify Functions per voci più naturali -->
+      </section>
+
+      <section id="accordion-media" class="mb-5">
+        <div class="accordion mb-3" id="salaAccordion1_pv_2">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="sala1_pv_2">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#sala1Content_pv_2"
+                      aria-expanded="false" aria-controls="sala1Content_pv_2"
+                      data-it="Introduzione alla Sala" data-en="Room introduction">Introduzione alla Sala</button>
+            </h2>
+            <div id="sala1Content_pv_2" class="accordion-collapse collapse"
+                 aria-labelledby="sala1_pv_2" data-bs-parent="#salaAccordion1_pv_2">
+              <div class="accordion-body">
+                <div class="row align-items-center g-4">
+                  <div class="col-lg-6">
+                    <p class="text-secondary mb-0"
+                       data-it="Nel 1848 il Re Carlo Alberto concesse lo Statuto Albertino: una serie di regole che permettevano ai cittadini di avere dei diritti. È il primo passo verso la democrazia italiana. Siediti su uno di questi banchi e ascolta in silenzio: forse sentirai ancora l'eco delle voci di allora."
+                       data-en="In 1848 King Carlo Alberto granted the Statuto Albertino: a set of rules that gave citizens rights. It was the first step towards Italian democracy. Sit on one of these benches and listen quietly: you might still hear the echo of the voices of that time.">Nel 1848 il Re Carlo Alberto concesse lo Statuto Albertino: una serie di regole che permettevano ai cittadini di avere dei diritti. È il primo passo verso la democrazia italiana. Siediti su uno di questi banchi e ascolta in silenzio: forse sentirai ancora l'eco delle voci di allora.</p>
+                  </div>
+                  <div class="col-lg-6">
+                    <div id="carousel_pv_2" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <img src="img/room_1/parlamento_subalpino.jpg" class="d-block w-100" data-it-alt="Aula del Parlamento Subalpino" data-en-alt="Hall of the Subalpine Parliament" alt="Aula del Parlamento Subalpino" loading="lazy" />
+                                  </div>
+                                  <div class="carousel-item ">
+                                    <img src="img/room_1/parlamento_soffitto.jpg" class="d-block w-100" data-it-alt="Soffitto decorato del Parlamento Subalpino" data-en-alt="Decorated ceiling of the Subalpine Parliament" alt="Soffitto decorato del Parlamento Subalpino" loading="lazy" />
+                                  </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carousel_pv_2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carousel_pv_2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion mb-4" id="salaAccordion2_pv_2">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="media_pv_2">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#mediaContent_pv_2"
+                      aria-expanded="false" aria-controls="mediaContent_pv_2"
+                      data-it="Media e Risorse" data-en="Media and Resources">Media e Risorse</button>
+            </h2>
+            <div id="mediaContent_pv_2" class="accordion-collapse collapse"
+                 aria-labelledby="media_pv_2" data-bs-parent="#salaAccordion2_pv_2">
+              <div class="accordion-body">
+                <p class="text-secondary mb-3"
+                   data-it="Guarda il video introduttivo e immergiti nella storia del Risorgimento."
+                   data-en="Watch the introductory video and immerse yourself in the history of the Risorgimento.">Guarda il video introduttivo e immergiti nella storia del Risorgimento.</p>
+                <div class="ratio ratio-16x9">
+                  <video controls preload="metadata" poster="img/room_1/parlamento_subalpino.jpg">
+                    <source src="video/pv_sala_2.mp4" type="video/mp4" />
+                    <span data-it="Il tuo browser non supporta il formato video." data-en="Your browser does not support the video format.">Il tuo browser non supporta il formato video.</span>
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="h4 text-center mb-3" data-it="Scorri la linea del Tempo!" data-en="Scroll through the timeline!">Scorri la linea del Tempo!</h2>
+        <div class="timeline-wrap">
+          <iframe
+            src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vS2gLYWsLv5zWrkqOneofsC8Jgi3sUN_Wzoq6bLOev7zKtEOlzHC65ofRzCiRKMELVb77d_HjFbgLbU&font=Default&lang=it&initial_zoom=1&width=100%25&height=450"
+            title="Timeline del Risorgimento Italiano"
+            width="100%" height="450" allowfullscreen frameborder="0" loading="lazy"></iframe>
+        </div>
+      </section>
+
+      <section class="next-sala-bar mb-4">
+        <a class="btn btn-primary" href="pv_sala_1.html" data-it="← Sala 1" data-en="← Room 1">← Sala 1</a>
+        <a class="btn btn-primary" href="pv_sala_3.html" data-it="Sala 3 →" data-en="Room 3 →">Sala 3 →</a>
+      </section>
+
+      <footer class="pb-4 pt-3">
+        <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 text-secondary small">
+          <span>© Esplora il Museo</span>
+          <span class="text-sm-end" data-it="Museo Nazionale del Risorgimento Italiano — Torino"
+                data-en="National Museum of the Italian Unification — Turin">Museo Nazionale del Risorgimento Italiano — Torino</span>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Script Botpress -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2026/02/27/15/20260227151357-NCML2CRD.js" defer></script>
+  <script>
+    window.botpress.on('webchat:initialized', () => {
+      window.botpress.updateUser({
+        data: {
+          profile: "Il piccolo visitatore",
+          current_room: "room_2"
+        }
+      })
+    })
+    window.botpress.on('webchat:opened', async () => {
+      await window.botpress.sendEvent({ type: 'trigger' })
+    })
+  </script>
+</body>
+</html>
