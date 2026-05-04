@@ -7,10 +7,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
 </head>
 <body class="bg-body-tertiary" data-profile="es" data-sala="3">
 
-  <a class="skip-link" href="#main" data-it="Vai al contenuto principale" data-en="Skip to main content">Vai al contenuto principale</a>
 
   <nav class="navbar bg-body border-bottom sticky-top" aria-label="Navigazione principale">
     <div class="container">
@@ -148,21 +149,17 @@
       <section id="sala-introduction" class="mb-4">
         <div class="d-flex flex-column flex-md-row align-items-start gap-4 mb-3">
           <div class="flex-grow-1">
-            <h2 class="h3 mb-3" data-it="Sala 3" data-en="Room 3">Sala 3</h2>
-            <div id="sala-intro-text">
-              <p class="text-secondary mb-0"
-                 data-it="L'ultima sezione affronta il passaggio dal Regno di Sardegna al Regno d'Italia (1861) e il processo di nation-building post-unitario: brigantaggio meridionale, questione romana, piemontesizzazione amministrativa, scolarizzazione di massa. Le fonti conservate — leggi Rattazzi, carte del ministero dell'Interno, carteggio Minghetti-Farini — documentano un'unità fatta, più che di entusiasmo, di durissima contrattazione istituzionale."
-                 data-en="The final section addresses the transition from the Kingdom of Sardinia to the Kingdom of Italy (1861) and the process of post-unification nation-building: southern brigandage, the Roman question, administrative Piedmontisation, mass schooling. The preserved sources — Rattazzi laws, Interior Ministry papers, Minghetti-Farini correspondence — document a unity made, more than of enthusiasm, of hard institutional bargaining.">L'ultima sezione affronta il passaggio dal Regno di Sardegna al Regno d'Italia (1861) e il processo di nation-building post-unitario: brigantaggio meridionale, questione romana, piemontesizzazione amministrativa, scolarizzazione di massa. Le fonti conservate — leggi Rattazzi, carte del ministero dell'Interno, carteggio Minghetti-Farini — documentano un'unità fatta, più che di entusiasmo, di durissima contrattazione istituzionale.</p>
-            </div>
+            <h2 class="h3 mb-3" data-it="Il Museo nel 1938" data-en="The Museum in 1938" data-en="Room 3">Il Museo nel 1938</h2>
+            <p class="text-secondary mb-0" data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>
-          <div class="flex-shrink-0" style="max-width: 220px;">
-            <img src="img/room_1/busto_cavour.jpg"
-                 data-it-alt="Busto di Cavour" data-en-alt="Bust of Cavour"
-                 alt="Busto di Cavour"
-                 class="img-fluid rounded-4 shadow-sm" loading="lazy" />
-          </div>
+
         </div>
 
+
+        <!-- Pulsante per ascoltare il testo della sezione — da implementare con sintesi vocale (Text-to-Speech) -->
+        <!-- provvisorio
         <button type="button" class="btn btn-outline-secondary btn-listen"
                 data-read-target="sala-intro-text"
                 aria-pressed="false"
@@ -172,77 +169,204 @@
           <span class="speaker-ico" aria-hidden="true">🔊</span>
           <span class="btn-label" data-it="🔊 Ascolta" data-en="🔊 Listen">🔊 Ascolta</span>
         </button>
+      -->
         <!-- TODO: sostituire con ElevenLabs via Netlify Functions per voci più naturali -->
       </section>
 
       <section id="accordion-media" class="mb-5">
-        <div class="accordion mb-3" id="salaAccordion1_es_3">
+
+        <!-- BLOCCO 1 — aperto -->
+        <div class="accordion mb-3" id="salaAccordion2_pv_1">
           <div class="accordion-item">
-            <h2 class="accordion-header" id="sala1_es_3">
+            <h2 class="accordion-header" id="sala2_pv_1">
               <button class="accordion-button collapsed" type="button"
-                      data-bs-toggle="collapse" data-bs-target="#sala1Content_es_3"
-                      aria-expanded="false" aria-controls="sala1Content_es_3"
-                      data-it="Introduzione alla Sala" data-en="Room introduction">Introduzione alla Sala</button>
+                      data-bs-toggle="collapse" data-bs-target="#sala2Content_pv_1"
+                      aria-expanded="false" aria-controls="sala2Content_pv_1"
+                      data-it="La visione monarchica dell'allestimento di Cesare Maria De Vecchi" data-en="The monarchist vision of the exhibition setup by Cesare Maria De Vecchi">
+                La visione monarchica dell'allestimento di Cesare Maria De Vecchi
+
+              </button>
             </h2>
-            <div id="sala1Content_es_3" class="accordion-collapse collapse"
-                 aria-labelledby="sala1_es_3" data-bs-parent="#salaAccordion1_es_3">
+            <div id="sala2Content_pv_1" class="accordion-collapse collapse show"
+                aria-labelledby="sala2_pv_1" data-bs-parent="#salaAccordion2_pv_1">
               <div class="accordion-body">
-                <div class="row align-items-center g-4">
-                  <div class="col-lg-6">
-                    <p class="text-secondary mb-0"
-                       data-it="La storiografia recente (Banti, Ginsborg, Riall) ha spostato l'attenzione dal paradigma eroico-biografico a categorie come linguaggio politico, rituale pubblico, circolazione transnazionale delle idee. Il Risorgimento emerge così come fenomeno europeo — intrecciato con il Vormärz tedesco, la questione d'Oriente, la causa polacca — più che come vicenda strettamente italiana."
-                       data-en="Recent historiography (Banti, Ginsborg, Riall) has shifted attention from the heroic-biographical paradigm to categories such as political language, public ritual, transnational circulation of ideas. The Risorgimento thus emerges as a European phenomenon — interwoven with the German Vormärz, the Eastern Question, the Polish cause — more than as a strictly Italian episode.">La storiografia recente (Banti, Ginsborg, Riall) ha spostato l'attenzione dal paradigma eroico-biografico a categorie come linguaggio politico, rituale pubblico, circolazione transnazionale delle idee. Il Risorgimento emerge così come fenomeno europeo — intrecciato con il Vormärz tedesco, la questione d'Oriente, la causa polacca — più che come vicenda strettamente italiana.</p>
-                  </div>
-                  <div class="col-lg-6">
-                    <div id="carousel_es_3" class="carousel slide" data-bs-ride="carousel">
-                      <div class="carousel-inner">
-                                  <div class="carousel-item active">
-                                    <img src="img/room_1/busto_cavour.jpg" class="d-block w-100" data-it-alt="Busto di Cavour" data-en-alt="Bust of Cavour" alt="Busto di Cavour" loading="lazy" />
-                                  </div>
-                                  <div class="carousel-item ">
-                                    <img src="img/scalone.jpg" class="d-block w-100" data-it-alt="Scalone monumentale" data-en-alt="Monumental staircase" alt="Scalone monumentale" loading="lazy" />
-                                  </div>
-                      </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carousel_es_3" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carousel_es_3" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <p class="text-secondary mb-0"
+                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="accordion mb-4" id="salaAccordion2_es_3">
+
+        <!-- Immagini blocco 1 — sempre visibile -->
+        <!-- Immagine blocco 2 — carosello sempre visibile Savoia-->
+        <div class="mb-4">
+          <div id="carousel_pv_1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active natural">
+                <img src="img/room_3/allestimento_1938.jpeg" class="d-block w-100 rounded-4"
+                    data-it-alt="Allestimento del 1938"
+                    data-en-alt="1938 Exhibition display"
+                    alt="Allestimento del 1938" loading="lazy" />
+              </div>
+              <div class="carousel-item natural">
+                <img src="img/room_3/cannoni_1.jpg" class="d-block w-100 rounded-4"
+                    data-it-alt="Cannoni"                 
+                    data-en-alt="Cannoni"
+                    alt="Cannoni" loading="lazy" />
+              </div>
+
+            </div>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="0"
+                      class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
+            </button>
+          </div>
+        </div>
+
+              
+
+
+
+        <!-- BLOCCO 2 — chiuso La Battaglia di Torino -->
+        <div class="accordion mb-3" id="salaAccordion2_pv_1">
           <div class="accordion-item">
-            <h2 class="accordion-header" id="media_es_3">
+            <h2 class="accordion-header" id="sala2_pv_1">
               <button class="accordion-button collapsed" type="button"
-                      data-bs-toggle="collapse" data-bs-target="#mediaContent_es_3"
-                      aria-expanded="false" aria-controls="mediaContent_es_3"
-                      data-it="Media e Risorse" data-en="Media and Resources">Media e Risorse</button>
+                      data-bs-toggle="collapse" data-bs-target="#sala2Content_pv_1"
+                      aria-expanded="false" aria-controls="sala2Content_pv_1"
+                      data-it="La Battaglia di Torino"
+                      data-en="The Battle of Turin">
+                La Battaglia di Torino
+              </button>
             </h2>
-            <div id="mediaContent_es_3" class="accordion-collapse collapse"
-                 aria-labelledby="media_es_3" data-bs-parent="#salaAccordion2_es_3">
+            <div id="sala2Content_pv_1" class="accordion-collapse collapse"
+                aria-labelledby="sala2_pv_1" data-bs-parent="#salaAccordion2_pv_1">
               <div class="accordion-body">
-                <p class="text-secondary mb-3"
-                   data-it="Guarda il video introduttivo e immergiti nella storia del Risorgimento."
-                   data-en="Watch the introductory video and immerse yourself in the history of the Risorgimento.">Guarda il video introduttivo e immergiti nella storia del Risorgimento.</p>
-                <div class="ratio ratio-16x9">
-                  <video controls preload="metadata" poster="img/room_1/busto_cavour.jpg">
-                    <source src="video/es_sala_3.mp4" type="video/mp4" />
-                    <span data-it="Il tuo browser non supporta il formato video." data-en="Your browser does not support the video format.">Il tuo browser non supporta il formato video.</span>
-                  </video>
-                </div>
+                <p class="text-secondary mb-0"
+                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Immagine blocco 2 — sempre visibile -->
+        <!-- Immagine blocco 2 — battaglia di Torino + Pietro Micca-->
+        <div class="mb-4">
+          <div id="carousel_pv_1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active natural">
+                <img src="img/room_3/battaglia_torino.jpg" class="d-block w-100 rounded-4"
+                    data-it-alt="Battaglia di Torino"
+                    data-en-alt="Battle of Turin"
+                    alt="Battaglia di Torino" loading="lazy" />
+              </div>
+              <div class="carousel-item natural">
+                <img src="img/room_3/pietro_micca.jpg" class="d-block w-100 rounded-4"
+                    data-it-alt="Pietro Micca"
+                    data-en-alt="Pietro Micca"
+                    alt="Pietro Micca" loading="lazy" />
+              </div>
+
+            </div>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carousel_pv_2" data-bs-slide-to="0"
+                      class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carousel_pv_2" data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_pv_2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel_pv_2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
+            </button>
+          </div>
+        </div>
+
+
+        <!-- BLOCCO 3 — Cippi -->
+        <div class="accordion mb-3" id="salaAccordion2_pv_1">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="sala2_pv_1">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#sala2Content_pv_1"
+                      aria-expanded="false" aria-controls="sala2Content_pv_1"
+                      data-it="I cippi per il ringraziamento alla Vergine della Consolata"
+                      data-en="The memorials for the thanksgiving to the Virgin of Consolation">
+                I cippi per il ringraziamento alla Vergine della Consolata
+               </button>
+            </h2>
+            <div id="sala2Content_pv_1" class="accordion-collapse collapse"
+                aria-labelledby="sala2_pv_1" data-bs-parent="#salaAccordion2_pv_1">
+              <div class="accordion-body">
+                <p class="text-secondary mb-0"
+                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Immagine blocco 3 — cippi -->
+        <div class="mb-4">
+          <img src="img/room_3/stele.jpg"
+              class="d-block w-100 rounded-4 single-img"
+              data-it-alt="Stele"
+              data-en-alt="Memorial for the thanksgiving to the Virgin of Consolation"
+              alt="Stele"
+              loading="lazy" />
+        </div>
+
+        <!-- BLOCCO 4 — chiuso Visioni a confronto -->
+        <div class="accordion mb-3" id="salaAccordion2_pv_1">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="sala2_pv_1">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#sala2Content_pv_1"
+                      aria-expanded="false" aria-controls="sala2Content_pv_1"
+                      data-it="Quando ha inizio il Risorgimento? Visioni a confronto"
+                      data-en="When did the Risorgimento begin? Comparing visions">
+                Quando ha inizio il Risorgimento? Visioni a confronto
+               </button>
+            </h2>
+            <div id="sala2Content_pv_1" class="accordion-collapse collapse"
+                aria-labelledby="sala2_pv_1" data-bs-parent="#salaAccordion2_pv_1">
+              <div class="accordion-body">
+                <p class="text-secondary mb-0"
+                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
 
         <h2 class="h4 text-center mb-3" data-it="Scorri la linea del Tempo!" data-en="Scroll through the timeline!">Scorri la linea del Tempo!</h2>
         <div class="timeline-wrap">
@@ -271,6 +395,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
           crossorigin="anonymous"></script>
+
+  <!--glithbozx per visualizzazione immagini-->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <!--script JS per funzionalità aggiuntive -->
   <script src="js/app.js"></script>
 
   <!-- Script Botpress -->

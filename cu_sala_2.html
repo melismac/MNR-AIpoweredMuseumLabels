@@ -7,6 +7,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
 </head>
 <body class="bg-body-tertiary" data-profile="cu" data-sala="2">
 
@@ -141,6 +143,7 @@
   <div class="intestation room-cu-2">
     <h1 data-it="Sala 2" data-en="Room 2">Sala 2</h1>
   </div>
+  <!-- main con sezioni didascalia-->
 
   <main id="main" class="py-4 py-lg-5" tabindex="-1">
     <div class="container">
@@ -148,21 +151,19 @@
       <section id="sala-introduction" class="mb-4">
         <div class="d-flex flex-column flex-md-row align-items-start gap-4 mb-3">
           <div class="flex-grow-1">
-            <h2 class="h3 mb-3" data-it="Sala 2" data-en="Room 2">Sala 2</h2>
+            <h2 class="h3 mb-3" data-it="Un museo nel Museo" data-en="A museum within a museum"> Un museo nel Museo</h2>
             <div id="sala-intro-text">
               <p class="text-secondary mb-0"
-                 data-it="Il 1848 è l'anno della 'primavera dei popoli': tutta Europa è scossa da rivoluzioni. In Italia Milano si ribella agli austriaci nelle Cinque Giornate, Venezia proclama la Repubblica, e il re Carlo Alberto concede lo Statuto Albertino — la prima costituzione del Regno di Sardegna. Finirà male sul campo di battaglia, ma il Piemonte diventa il faro politico della penisola."
-                 data-en="1848 is the year of the 'Springtime of Peoples': revolutions shake all Europe. In Italy Milan rises against the Austrians in the Five Days, Venice declares a Republic, and King Carlo Alberto grants the Statuto Albertino — the first constitution of the Kingdom of Sardinia. It will end badly on the battlefield, but Piedmont becomes the political beacon of the peninsula.">Il 1848 è l'anno della 'primavera dei popoli': tutta Europa è scossa da rivoluzioni. In Italia Milano si ribella agli austriaci nelle Cinque Giornate, Venezia proclama la Repubblica, e il re Carlo Alberto concede lo Statuto Albertino — la prima costituzione del Regno di Sardegna. Finirà male sul campo di battaglia, ma il Piemonte diventa il faro politico della penisola.</p>
-            </div>
+                 data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                 data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          
+              </p>
           </div>
-          <div class="flex-shrink-0" style="max-width: 220px;">
-            <img src="img/room_1/parlamento_subalpino.jpg"
-                 data-it-alt="Aula del Parlamento Subalpino" data-en-alt="Hall of the Subalpine Parliament"
-                 alt="Aula del Parlamento Subalpino"
-                 class="img-fluid rounded-4 shadow-sm" loading="lazy" />
-          </div>
+
         </div>
 
+        <!-- Pulsante per ascoltare il testo della sezione — da implementare con sintesi vocale (Text-to-Speech) -->
+        <!-- provvisorio
         <button type="button" class="btn btn-outline-secondary btn-listen"
                 data-read-target="sala-intro-text"
                 aria-pressed="false"
@@ -172,78 +173,138 @@
           <span class="speaker-ico" aria-hidden="true">🔊</span>
           <span class="btn-label" data-it="🔊 Ascolta" data-en="🔊 Listen">🔊 Ascolta</span>
         </button>
+      -->
         <!-- TODO: sostituire con ElevenLabs via Netlify Functions per voci più naturali -->
+      
       </section>
 
       <section id="accordion-media" class="mb-5">
+
+        <!-- BLOCCO 1 — primo aperto -->
+
+        <div class="accordion mb-3" id="salaAccordion1_pv_1">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="sala1_pv_1">
+              <button class="accordion-button" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#sala1Content_pv_1"
+                      aria-expanded="true" aria-controls="sala1Content_pv_1"
+                      data-it="Il museo non è sempre stato qui!" data-en="The museum has not always been here!">
+                Il museo non è sempre stato qui!
+              </button>
+            </h2>
+            <div id="sala1Content_pv_1" class="accordion-collapse collapse show"
+                aria-labelledby="sala1_pv_1" data-bs-parent="#salaAccordion1_pv_1">
+              <div class="accordion-body">
+                <p class="text-secondary mb-0"
+                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Immagine blocco 1 — sempre visibile -->
+        <div class="mb-4">
+          <div id="carousel_pv_1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active natural">
+                <img src="img/room_2/dalsani_battaglie_municipali.jpg" class="d-block w-100 rounded-4"
+                    data-it-alt="Dalsani Battaglie Municipali"
+                    data-en-alt="Municipal Battles by Dalsani"
+                    alt="Dalsani Battaglie Municipali" loading="lazy" />
+              </div>
+              <div class="carousel-item natural">
+                <img src="img/room_2/esposizione_1884.jpg" class="d-block w-100 rounded-4"
+                    data-it-alt="Esposizione 1884"
+                    data-en-alt="1884 Exhibition"
+                    alt="Esposizione 1884" loading="lazy" />
+              </div>
+            </div>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="0"
+                      class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- BLOCCO 2 — chiuso-- esposizioni -->
         <div class="accordion mb-3" id="salaAccordion1_cu_2">
           <div class="accordion-item">
             <h2 class="accordion-header" id="sala1_cu_2">
-              <button class="accordion-button collapsed" type="button"
+              <button class="accordion-button" type="button"
                       data-bs-toggle="collapse" data-bs-target="#sala1Content_cu_2"
-                      aria-expanded="false" aria-controls="sala1Content_cu_2"
-                      data-it="Introduzione alla Sala" data-en="Room introduction">Introduzione alla Sala</button>
+                      aria-expanded="true" aria-controls="sala1Content_cu_2"
+                      data-it="Le grandi esposizioni del 1884 e del 1911" data-en="The Great Exhibitions of 1884 and 1911">
+                Le grandi esposizioni del 1884 e del 1911
+              </button>
             </h2>
             <div id="sala1Content_cu_2" class="accordion-collapse collapse"
-                 aria-labelledby="sala1_cu_2" data-bs-parent="#salaAccordion1_cu_2">
+                aria-labelledby="sala1_cu_2" data-bs-parent="#salaAccordion1_cu_2">
               <div class="accordion-body">
-                <div class="row align-items-center g-4">
-                  <div class="col-lg-6">
-                    <p class="text-secondary mb-0"
-                       data-it="Lo Statuto Albertino resterà la costituzione del Regno d'Italia fino al 1948 — più di un secolo. Non era scritto dal popolo ma 'concesso' dal re, e poteva essere modificato con legge ordinaria. Proprio questa flessibilità, in epoca fascista, permetterà l'ascesa al potere di Mussolini senza un vero strappo costituzionale."
-                       data-en="The Statuto Albertino remained the Kingdom of Italy's constitution until 1948 — more than a century. It was not written by the people but 'granted' by the king, and could be changed by ordinary law. This very flexibility, in the Fascist era, would allow Mussolini's rise to power without a true constitutional break.">Lo Statuto Albertino resterà la costituzione del Regno d'Italia fino al 1948 — più di un secolo. Non era scritto dal popolo ma 'concesso' dal re, e poteva essere modificato con legge ordinaria. Proprio questa flessibilità, in epoca fascista, permetterà l'ascesa al potere di Mussolini senza un vero strappo costituzionale.</p>
-                  </div>
-                  <div class="col-lg-6">
-                    <div id="carousel_cu_2" class="carousel slide" data-bs-ride="carousel">
-                      <div class="carousel-inner">
-                                  <div class="carousel-item active">
-                                    <img src="img/room_1/parlamento_subalpino.jpg" class="d-block w-100" data-it-alt="Aula del Parlamento Subalpino" data-en-alt="Hall of the Subalpine Parliament" alt="Aula del Parlamento Subalpino" loading="lazy" />
-                                  </div>
-                                  <div class="carousel-item ">
-                                    <img src="img/room_1/parlamento_soffitto.jpg" class="d-block w-100" data-it-alt="Soffitto decorato del Parlamento" data-en-alt="Decorated parliament ceiling" alt="Soffitto decorato del Parlamento" loading="lazy" />
-                                  </div>
-                      </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carousel_cu_2" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carousel_cu_2" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <p class="text-secondary mb-0"
+                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="accordion mb-4" id="salaAccordion2_cu_2">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="media_cu_2">
-              <button class="accordion-button collapsed" type="button"
-                      data-bs-toggle="collapse" data-bs-target="#mediaContent_cu_2"
-                      aria-expanded="false" aria-controls="mediaContent_cu_2"
-                      data-it="Media e Risorse" data-en="Media and Resources">Media e Risorse</button>
-            </h2>
-            <div id="mediaContent_cu_2" class="accordion-collapse collapse"
-                 aria-labelledby="media_cu_2" data-bs-parent="#salaAccordion2_cu_2">
-              <div class="accordion-body">
-                <p class="text-secondary mb-3"
-                   data-it="Guarda il video introduttivo e immergiti nella storia del Risorgimento."
-                   data-en="Watch the introductory video and immerse yourself in the history of the Risorgimento.">Guarda il video introduttivo e immergiti nella storia del Risorgimento.</p>
-                <div class="ratio ratio-16x9">
-                  <video controls preload="metadata" poster="img/room_1/parlamento_subalpino.jpg">
-                    <source src="video/cu_sala_2.mp4" type="video/mp4" />
-                    <span data-it="Il tuo browser non supporta il formato video." data-en="Your browser does not support the video format.">Il tuo browser non supporta il formato video.</span>
-                  </video>
-                </div>
+        <!-- Immagine blocco 2 — chiuso -->
+        <div class="mb-4">
+          <div id="carousel_cu_2" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active natural">
+                <img src="img/room_2/esposizione_1884.jpg" class="d-block w-100 rounded-4"
+                    data-it-alt="Esposizione 1884"
+                    data-en-alt="1884 Exhibition"
+                    alt="Esposizione 1884" loading="lazy" />
+              </div>
+              <div class="carousel-item natural">
+                <img src="img/room_2/valzer_esposizione2.jpg" class="d-block w-100 rounded-4"
+                    data-it-alt="Valzer Esposizione 1911"
+                    data-en-alt="Valzer 1911 Exhibition"
+                    alt="Esposizione 1911" loading="lazy" />
               </div>
             </div>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carousel_cu_2" data-bs-slide-to="0"
+                      class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carousel_cu_2" data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_cu_2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel_cu_2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
+            </button>
           </div>
         </div>
 
+
+
+
+
+
+
+
+        <!-- Timeline -->
         <h2 class="h4 text-center mb-3" data-it="Scorri la linea del Tempo!" data-en="Scroll through the timeline!">Scorri la linea del Tempo!</h2>
         <div class="timeline-wrap">
           <iframe
@@ -251,11 +312,12 @@
             title="Timeline del Risorgimento Italiano"
             width="100%" height="450" allowfullscreen frameborder="0" loading="lazy"></iframe>
         </div>
+
       </section>
 
       <section class="next-sala-bar mb-4">
-        <a class="btn btn-primary" href="cu_sala_1.html" data-it="← Sala 1" data-en="← Room 1">← Sala 1</a>
-        <a class="btn btn-primary" href="cu_sala_3.html" data-it="Sala 3 →" data-en="Room 3 →">Sala 3 →</a>
+        <a class="btn btn-primary" href="cu_sala_1.html" data-it="← Sala 1" data-en="← Room 1"> ← Sala 1</a>
+        <a class="btn btn-primary" href="cu_sala_3.html" data-it="Sala 3 →" data-en="Room 3 →"> Sala 3 →</a>
       </section>
 
       <footer class="pb-4 pt-3">
@@ -271,6 +333,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
           crossorigin="anonymous"></script>
+  <!--glithbozx per visualizzazione immagini-->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <!--script JS per funzionalità aggiuntive -->
   <script src="js/app.js"></script>
 
   <!-- Script Botpress -->
