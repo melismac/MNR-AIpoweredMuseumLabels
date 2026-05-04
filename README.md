@@ -211,7 +211,4 @@ The design system also proposes an **optional serif companion** (`--emu-font-ser
 
 ## CAVEATS
 
-- **No slide template was provided**, so `slides/` has not been created.
-- **No iOS/Android app or Figma** was provided — the design system covers the web companion only.
-- **Content in rooms 2 and 3** is hosted on Google Sites (linked out from `index.html`), so we have no design data for those pages beyond what the external URLs imply. We assume they follow the same template as `pv_sala_0.html`.
 - **The translation API call** in `server.js` is a minimal OpenAI proxy; it is not part of the visual system and is documented only as context.
