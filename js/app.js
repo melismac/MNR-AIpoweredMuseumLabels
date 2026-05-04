@@ -233,6 +233,21 @@
   }
   window.EMU_gaEvent = gaEvent;
 
+  // ---------- Linea decorativa banner ----------
+  function initIntestationLine() {
+    const intestation = document.querySelector('.intestation');
+    if (!intestation) return;
+    const h1 = intestation.querySelector('h1, h2');
+    if (!h1) return;
+    const wrapper = document.createElement('div');
+    wrapper.style.textAlign = 'center';
+    h1.parentNode.insertBefore(wrapper, h1);
+    wrapper.appendChild(h1);
+    const line = document.createElement('div');
+    line.classList.add('intestation-line');
+    wrapper.appendChild(line);
+  }
+
   // ---------- Cookie consent banner ----------
   function initCookieBanner() {
     const consent = localStorage.getItem('cookieConsent');
@@ -316,6 +331,8 @@
     }
   }
 
+
+
   // ---------- Public: select profile from home cards ----------
   window.EMU_selectProfile = function (key, href) {
     if (PROFILES[key]) {
@@ -337,6 +354,10 @@
     renderProfileBar();
     highlightActiveLinks();
     initListenButtons();
+    initIntestationLine();  // ← aggiunta richiamo riga banner
+
+
+
 
     // Inline language picker inside offcanvas
     document.querySelectorAll('.lang-inline button[data-lang]').forEach((btn) => {
@@ -350,5 +371,55 @@
     initBotpressTracking();
     // Let GA load first (synchronous in this flow) then fire page event
     setTimeout(trackSalaIfPresent, 200);
+
   });
+
+  // ---------- GLightbox ----------
+ 
+
+  function initGlightbox() {
+    if (typeof GLightbox === 'undefined') return;
+    document.querySelectorAll('#accordion-media img, #obj-img-int img').forEach((img) => {
+      if (img.closest('a')) return;
+      const a = document.createElement('a');
+      a.href = img.src;
+      a.classList.add('glightbox');
+      // prende la descrizione nella lingua corrente
+      const lang = getLang();
+      const desc = img.getAttribute('data-' + lang + '-alt') || img.alt || '';
+      // a.setAttribute('data-description', desc);
+      img.parentNode.insertBefore(a, img);
+      a.appendChild(img);
+    });
+    GLightbox({ touchNavigation: true, loop: false });
+  }
+
+
+
+  // ---------- Init ----------
+  document.addEventListener('DOMContentLoaded', () => {
+    const lang = getLang();
+    applyLanguage(lang);
+    renderProfileBar();
+    highlightActiveLinks();
+    initListenButtons();
+
+    document.querySelectorAll('.lang-inline button[data-lang]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        setLanguage(btn.getAttribute('data-lang'));
+        renderProfileBar();
+      });
+    });
+
+    initCookieBanner();
+    initBotpressTracking();
+    setTimeout(trackSalaIfPresent, 200);
+    initGlightbox(); // ← ultima riga
+  });
+
+
 })();
+
+
+
+
