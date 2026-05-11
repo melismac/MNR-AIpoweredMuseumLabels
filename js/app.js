@@ -45,10 +45,8 @@
     document.querySelectorAll('[data-it],[data-en]').forEach((el) => {
       const val = el.getAttribute('data-' + lang);
       if (val === null) return;
-      // For elements with data-attr-* we do attr-level too below
       el.innerHTML = val;
     });
-    // attr-level translations: data-it-aria / data-en-aria, data-it-alt / data-en-alt, data-it-placeholder / data-en-placeholder
     ['aria-label', 'alt', 'placeholder', 'title'].forEach((attr) => {
       const dataAttrIt = 'data-it-' + attr.replace('aria-', '');
       const dataAttrEn = 'data-en-' + attr.replace('aria-', '');
@@ -57,11 +55,9 @@
         if (v) el.setAttribute(attr, v);
       });
     });
-    // Update any inline-picker pressed state
     document.querySelectorAll('.lang-inline button[data-lang]').forEach((btn) => {
       btn.setAttribute('aria-pressed', btn.getAttribute('data-lang') === lang ? 'true' : 'false');
     });
-    // Stop speech if language changed mid-read
     if (window.speechSynthesis) window.speechSynthesis.cancel();
     resetAllListenButtons();
   }
@@ -110,7 +106,6 @@
       if (isMatch) {
         a.classList.add('active');
         a.setAttribute('aria-current', 'page');
-        // open parent accordion if inside one
         let parent = a.closest('.accordion-collapse');
         if (parent) {
           parent.classList.add('show');
@@ -125,7 +120,6 @@
   }
 
   // ---------- Text-to-Speech (Web Speech API) ----------
-  // TODO: sostituire con ElevenLabs via Netlify Functions per voci più naturali
   const TTS_SUPPORTED = ('speechSynthesis' in window) && ('SpeechSynthesisUtterance' in window);
   let currentUtterance = null;
   let currentButton = null;
@@ -136,17 +130,13 @@
     if (!el) return;
     const text = el.innerText.trim();
     if (!text) return;
-
-    // If already speaking from same button -> stop
     if (window.speechSynthesis.speaking && currentButton === button) {
       window.speechSynthesis.cancel();
       resetButton(button);
       return;
     }
-    // Otherwise cancel any previous read and start fresh
     window.speechSynthesis.cancel();
     resetAllListenButtons();
-
     const lang = getLang();
     const utt = new SpeechSynthesisUtterance(text);
     utt.lang = lang === 'en' ? 'en-GB' : 'it-IT';
@@ -161,20 +151,16 @@
   }
   function setButtonSpeaking(btn, speaking) {
     if (!btn) return;
-    const labelStop_it = '⏹ Stop';
-    const labelStop_en = '⏹ Stop';
-    const labelPlay_it = '🔊 Ascolta';
-    const labelPlay_en = '🔊 Listen';
     const lang = getLang();
     const labelSpan = btn.querySelector('.btn-label');
     if (speaking) {
       btn.classList.add('is-speaking');
       btn.setAttribute('aria-pressed', 'true');
-      if (labelSpan) labelSpan.textContent = lang === 'en' ? labelStop_en : labelStop_it;
+      if (labelSpan) labelSpan.textContent = '⏹ Stop';
     } else {
       btn.classList.remove('is-speaking');
       btn.setAttribute('aria-pressed', 'false');
-      if (labelSpan) labelSpan.textContent = lang === 'en' ? labelPlay_en : labelPlay_it;
+      if (labelSpan) labelSpan.textContent = lang === 'en' ? '🔊 Listen' : '🔊 Ascolta';
     }
   }
   function resetButton(btn) { setButtonSpeaking(btn, false); }
@@ -183,7 +169,6 @@
     currentButton = null;
     currentUtterance = null;
   }
-
   function initListenButtons() {
     document.querySelectorAll('.btn-listen').forEach((btn) => {
       if (!TTS_SUPPORTED) {
@@ -203,14 +188,11 @@
   });
 
   // ---------- Google Analytics 4 ----------
-  // Placeholder ID — replace with your real GA4 Measurement ID
   const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
   let gaLoaded = false;
-
   function loadGA() {
     if (gaLoaded) return;
     if (GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
-      // still stub dataLayer so events don't throw in dev
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () { window.dataLayer.push(arguments); };
       gaLoaded = true;
@@ -248,15 +230,26 @@
     wrapper.appendChild(line);
   }
 
+  // ---------- GLightbox ----------
+  function initGlightbox() {
+    if (typeof GLightbox === 'undefined') return;
+    document.querySelectorAll('#accordion-media img').forEach((img) => {
+      if (img.closest('a')) return;
+      const a = document.createElement('a');
+      a.href = img.src;
+      a.classList.add('glightbox');
+      // a.setAttribute('data-description', img.alt || '');
+      img.parentNode.insertBefore(a, img);
+      a.appendChild(img);
+    });
+    GLightbox({ touchNavigation: true, loop: false });
+  }
+
   // ---------- Cookie consent banner ----------
   function initCookieBanner() {
     const consent = localStorage.getItem('cookieConsent');
-    if (consent === 'accepted') {
-      loadGA();
-      return;
-    }
+    if (consent === 'accepted') { loadGA(); return; }
     if (consent === 'rejected') return;
-
     const lang = getLang();
     const banner = document.createElement('div');
     banner.className = 'cookie-banner';
@@ -281,7 +274,6 @@
       </div>
     `;
     document.body.appendChild(banner);
-
     const acceptBtn = banner.querySelector('[data-cookie-accept]');
     acceptBtn.addEventListener('click', () => {
       localStorage.setItem('cookieConsent', 'accepted');
@@ -292,12 +284,10 @@
       localStorage.setItem('cookieConsent', 'rejected');
       banner.remove();
     });
-
-    // Focus management: move focus to accept button
     setTimeout(() => acceptBtn.focus(), 50);
   }
 
-  // ---------- Botpress — track first user message ----------
+  // ---------- Botpress ----------
   function initBotpressTracking() {
     let tracked = false;
     const tryHook = () => {
@@ -312,7 +302,6 @@
         } catch (e) { /* ignore */ }
       }
     };
-    // Retry because Botpress script loads async
     let attempts = 0;
     const iv = setInterval(() => {
       attempts++;
@@ -321,7 +310,7 @@
     }, 1000);
   }
 
-  // ---------- Track sala_visitata on room pages ----------
+  // ---------- Track sala_visitata ----------
   function trackSalaIfPresent() {
     const page = document.body;
     const profileKey = page.getAttribute('data-profile');
@@ -331,8 +320,6 @@
     }
   }
 
-
-
   // ---------- Public: select profile from home cards ----------
   window.EMU_selectProfile = function (key, href) {
     if (PROFILES[key]) {
@@ -340,70 +327,22 @@
       gaEvent('profilo_selezionato', { profilo: key });
     }
     if (href) {
-      // tiny delay so the GA beacon is sent
       setTimeout(() => { window.location.href = href; }, 80);
       return false;
     }
     return true;
   };
 
-  // ---------- Init ----------
+  // ---------- Init — UN SOLO DOMContentLoaded ----------
   document.addEventListener('DOMContentLoaded', () => {
     const lang = getLang();
     applyLanguage(lang);
     renderProfileBar();
     highlightActiveLinks();
     initListenButtons();
-    initIntestationLine();  // ← aggiunta richiamo riga banner
+    initIntestationLine();
 
-
-
-
-    // Inline language picker inside offcanvas
-    document.querySelectorAll('.lang-inline button[data-lang]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        setLanguage(btn.getAttribute('data-lang'));
-        renderProfileBar();
-      });
-    });
-
-    initCookieBanner();
-    initBotpressTracking();
-    // Let GA load first (synchronous in this flow) then fire page event
-    setTimeout(trackSalaIfPresent, 200);
-
-  });
-
-  // ---------- GLightbox ----------
- 
-
-  function initGlightbox() {
-    if (typeof GLightbox === 'undefined') return;
-    document.querySelectorAll('#accordion-media img, #obj-img-int img').forEach((img) => {
-      if (img.closest('a')) return;
-      const a = document.createElement('a');
-      a.href = img.src;
-      a.classList.add('glightbox');
-      // prende la descrizione nella lingua corrente
-      const lang = getLang();
-      const desc = img.getAttribute('data-' + lang + '-alt') || img.alt || '';
-      // a.setAttribute('data-description', desc);
-      img.parentNode.insertBefore(a, img);
-      a.appendChild(img);
-    });
-    GLightbox({ touchNavigation: true, loop: false });
-  }
-
-
-
-  // ---------- Init ----------
-  document.addEventListener('DOMContentLoaded', () => {
-    const lang = getLang();
-    applyLanguage(lang);
-    renderProfileBar();
-    highlightActiveLinks();
-    initListenButtons();
-
+    // Language picker
     document.querySelectorAll('.lang-inline button[data-lang]').forEach((btn) => {
       btn.addEventListener('click', () => {
         setLanguage(btn.getAttribute('data-lang'));
@@ -414,12 +353,22 @@
     initCookieBanner();
     initBotpressTracking();
     setTimeout(trackSalaIfPresent, 200);
-    initGlightbox(); // ← ultima riga
-  });
+    initGlightbox();
 
+    // Aggiorna profilo automaticamente dai link del menu laterale
+    document.querySelectorAll('.offcanvas .list-group-item-action[href]').forEach((link) => {
+      link.addEventListener('click', () => {
+        const href = link.getAttribute('href') || '';
+        const match = href.match(/^(pv|cu|vi|es)_/);
+        if (match) {
+          localStorage.setItem('selectedProfile', match[1]);
+        }
+      });
+    });
 
-})();
+  }); // ← unica chiusura DOMContentLoaded
 
+})(); // ← chiusura IIFE
 
 
 
