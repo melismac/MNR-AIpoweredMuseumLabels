@@ -197,10 +197,29 @@ p { line-height: 1.6; }
 }
 .profile-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
+  object-position: center 25%;
+  height: 280px;
   display: block;
 }
+
+
+/*media queries per adattare l'altezza dell'immagine nelle card dei profili, mantenendo un buon compromesso tra visibilità del soggetto e coerenza visiva su diversi dispositivi.*/
+
+@media (min-width: 768px) {
+  .profile-card img {
+    height: 350px;  
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-card img {
+    height: 360px;
+  }
+}
+
+
 .profile-card .card-body {
   padding: 1.25rem;
   display: flex;
