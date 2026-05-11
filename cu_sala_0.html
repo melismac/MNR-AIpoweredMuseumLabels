@@ -273,17 +273,16 @@
   <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
   <script src="https://files.bpcontent.cloud/2026/02/27/15/20260227151357-NCML2CRD.js" defer></script>
   <script>
-    window.botpress.on('webchat:initialized', () => {
-      window.botpress.updateUser({
-        data: {
-          profile: "Il curioso",
-          current_room: "intro"
-        }
-      })
+    
+    
+  window.botpress.on('webchat:initialized', () => {
+    window.botpress.updateUser({
+      data: {
+        profile: "",
+        current_room: ""
+      }
     })
-    window.botpress.on('webchat:opened', async () => {
-      await window.botpress.sendEvent({ type: 'trigger' })
-    })
+  })
   </script>
 </body>
 </html>
