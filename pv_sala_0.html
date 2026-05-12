@@ -286,7 +286,7 @@ window.botpress.on('webchat:opened', async () => {
   if (lastRoom !== 'intro') {
     localStorage.setItem('bp_last_room', 'intro')
     await new Promise(resolve => setTimeout(resolve, 500))
-    await window.botpress.sendMessage("Ciao!")
+    await window.botpress.sendMessage("Ciao!/Hello!")
   }
 })
 

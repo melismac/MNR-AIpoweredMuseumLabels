@@ -344,17 +344,17 @@
 
   window.botpress.on('webchat:opened', async () => {
     const lastRoom = localStorage.getItem('bp_last_room')
-    const user = await window.botpress.getUser()
-    
     if (lastRoom !== 'room_1') {
       localStorage.setItem('bp_last_room', 'room_1')
+      const user = await window.botpress.getUser()
       if (user?.data?.profile) {
         await window.botpress.sendMessage("Cambio sala / Room change")
       } else {
-        await window.botpress.sendMessage("Ciao!")
+        await window.botpress.sendMessage("Ciao!/Hello!")
       }
     }
   })
+
 
 
 
