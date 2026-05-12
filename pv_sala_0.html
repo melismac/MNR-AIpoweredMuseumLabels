@@ -281,10 +281,14 @@
     })
   })
 
-  window.botpress.on('webchat:opened', async () => {
-    await window.botpress.sendMessage("Ciao!")
-  })
 
+  window.botpress.on('webchat:opened', async () => {
+  const lastRoom = localStorage.getItem('bp_last_room')
+  if (lastRoom !== 'intro') {
+    localStorage.setItem('bp_last_room', 'intro')
+    await window.botpress.sendMessage("Ciao!")
+  }
+})
 
 
     
