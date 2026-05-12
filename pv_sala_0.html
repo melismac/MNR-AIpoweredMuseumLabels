@@ -281,16 +281,14 @@
     })
   })
 
-
 window.botpress.on('webchat:opened', async () => {
   const lastRoom = localStorage.getItem('bp_last_room')
-  console.log("lastRoom:", lastRoom)
   if (lastRoom !== 'intro') {
     localStorage.setItem('bp_last_room', 'intro')
+    await new Promise(resolve => setTimeout(resolve, 500))
     await window.botpress.sendMessage("Ciao!")
   }
 })
-
 
     
   </script>
