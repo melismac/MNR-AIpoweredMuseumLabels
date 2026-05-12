@@ -331,24 +331,16 @@
   <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
   <script src="https://files.bpcontent.cloud/2026/02/27/15/20260227151357-NCML2CRD.js" defer></script>
   <script>
-    window.botpress.on('webchat:initialized', () => {
-      window.botpress.updateUser({
-        data: {
-          profile: "Il piccolo visitatore",
-          current_room: "room_1"
-        }
-      })
-    })
 
-
-    /* Per evitare di inviare il messaggio di benvenuto ogni volta che si apre la webchat, 
-    controlliamo se l'utente ha già un profilo e se è già stato impostato su questa sala.*/
 
 window.botpress.on('webchat:opened', async () => {
   const lastRoom = localStorage.getItem('bp_last_room')
+  const user = await window.botpress.getUser()
+  console.log("lastRoom:", lastRoom)
+  console.log("profile:", user?.data?.profile)
+  
   if (lastRoom !== 'room_1') {
     localStorage.setItem('bp_last_room', 'room_1')
-    const user = await window.botpress.getUser()
     if (user?.data?.profile) {
       await window.botpress.sendMessage("Cambio sala / Room change")
     } else {
@@ -356,6 +348,7 @@ window.botpress.on('webchat:opened', async () => {
     }
   }
 })
+
 
 
   </script>
