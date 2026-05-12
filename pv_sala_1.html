@@ -339,9 +339,25 @@
         }
       })
     })
-    window.botpress.on('webchat:opened', async () => {
-      await window.botpress.sendMessage("Cambio Sala / Room change")
-    })
+
+
+    /* Per evitare di inviare il messaggio di benvenuto ogni volta che si apre la webchat, 
+    controlliamo se l'utente ha già un profilo e se è già stato impostato su questa sala.*/
+
+window.botpress.on('webchat:opened', async () => {
+  const lastRoom = localStorage.getItem('bp_last_room')
+  if (lastRoom !== 'room_1') {
+    localStorage.setItem('bp_last_room', 'room_1')
+    const user = await window.botpress.getUser()
+    if (user?.data?.profile) {
+      await window.botpress.sendMessage("Cambio sala / Room change")
+    } else {
+      await window.botpress.sendMessage("Ciao!")
+    }
+  }
+})
+
+
   </script>
 </body>
 </html>

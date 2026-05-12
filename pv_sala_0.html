@@ -272,15 +272,42 @@
   <script src="https://files.bpcontent.cloud/2026/02/27/15/20260227151357-NCML2CRD.js" defer></script>
   <script>
 
-  window.botpress.on('webchat:initialized', () => {
-    window.botpress.updateUser({
-      data: {
-        profile: "",
-        current_room: ""
-      }
-    })
+  let savedProfile = ""
+
+  /* Legge il profilo utente prima di resettarlo.
+    È async perché getUser() richiede tempo — dobbiamo aspettare 
+    che Botpress risponda prima di andare avanti */
+  window.botpress.on('webchat:initialized', async () => {
+    
+    // await aspetta che getUser() finisca prima di salvare il valore
+    const user = await window.botpress.getUser()
+    savedProfile = user?.data?.profile || ""
+    
+    // resetta solo se l'utente non ha già un profilo
+    if (!savedProfile) {
+      window.botpress.updateUser({
+        data: {
+          profile: "",
+          current_room: ""
+        }
+      })
+    }
   })
-  </script>
+window.botpress.on('webchat:opened', async () => {
+  const lastRoom = localStorage.getItem('bp_last_room')
+  
+  if (lastRoom !== 'intro' || !savedProfile) {
+    localStorage.setItem('bp_last_room', 'intro')
+    if (savedProfile) {
+      await window.botpress.sendMessage("Cambio sala / Room change")
+    } else {
+      await window.botpress.sendMessage("Ciao!")
+    }
+  }
+})
+
+
+
     
   </script>
 </body>

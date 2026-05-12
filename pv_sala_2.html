@@ -319,9 +319,18 @@
         }
       })
     })
-    window.botpress.on('webchat:opened', async () => {
-      await window.botpress.sendMessage("Cambio Sala / Room change")
-    })
+  window.botpress.on('webchat:opened', async () => {
+    const lastRoom = localStorage.getItem('bp_last_room')
+    if (lastRoom !== 'room_2') {
+      localStorage.setItem('bp_last_room', 'room_2')
+      const user = await window.botpress.getUser()
+      if (user?.data?.profile) {
+        await window.botpress.sendMessage("Cambio sala / Room change")
+      } else {
+        await window.botpress.sendMessage("Ciao!")
+      }
+    }
+  })
   </script>
 </body>
 </html>
