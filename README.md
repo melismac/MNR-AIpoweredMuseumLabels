@@ -1,10 +1,12 @@
 # Esplora il Museo — Design System
 
-A design system for **Esplora il Museo**, a mobile-first, accessible web companion for the **Museo Nazionale del Risorgimento Italiano** (National Museum of the Italian Unification / *Risorgimento*) in Turin, Italy.
+A design system for **Esplora il Museo**, a mobile-first, accessible digital label for the **Museo Nazionale del Risorgimento Italiano** (National Museum of the Italian Unification / *Risorgimento*) in Turin, Italy.
 
-The product lets visitors pick one of four "profiles" — reading personas that change the narrative voice of the museum tour — and walk through the exhibit rooms (*sale*) at their own pace, via text, images, audio readings, and embedded KnightLab timelines.
+The digital label is an experimental case study which is part of **Melissa Macaluso's doctoral research**. Macaluso is a PhD student of the National PhD programme in Heritage Science by **Sapienza University of Rome** with a scolarship by the **University of Turin**. 
 
-## The product in one paragraph
+The project lets visitors pick one of four "profiles" — reading personas that change the narrative voice of the museum tour — and walk through the exhibit rooms (*sale*) at their own pace, via text, images, audio readings, and embedded KnightLab timelines.
+
+## The prototype in one paragraph
 
 *Esplora il Museo* is a companion web app for the physical museum. On the home page, the visitor picks one of four **profiles** — *Il Piccolo Visitatore* (young visitor), *Il Curioso* (the curious), *Il Visionario* (the visionary), *L'Esperto* (the expert) — each keyed to a 19th-century painting of a Risorgimento figure. From there, the site unfolds room by room (Introduzione → Sala 1 → Sala 2 → Sala 3), mixing short paragraphs of commentary, photo carousels of artworks and artefacts, embedded videos, and a KnightLab timeline. A language switcher plus an ElevenLabs text-to-speech button make the content more accessible.
 
