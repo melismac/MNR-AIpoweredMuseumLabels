@@ -8,7 +8,7 @@ The project lets visitors pick one of four "profiles" — reading personas that 
 
 ## The prototype in one paragraph
 
-*Esplora il Museo* is a companion web app for the physical museum. On the home page, the visitor picks one of four **profiles** — *Il Piccolo Visitatore* (young visitor), *Il Curioso* (the curious), *Il Visionario* (the visionary), *L'Esperto* (the expert) — each keyed to a 19th-century painting of a Risorgimento figure. From there, the site unfolds room by room (Introduzione → Sala 1 → Sala 2 → Sala 3), mixing short paragraphs of commentary, photo carousels of artworks and artefacts, embedded videos, and a KnightLab timeline. A language switcher plus an ElevenLabs text-to-speech button make the content more accessible.
+*Esplora il Museo* is a companion digital label for the physical museum visit. On the home page, the visitor picks one of four **profiles** — *Il Piccolo Visitatore* (young visitor), *Il Curioso* (the curious), *Il Visionario* (the visionary), *L'Esperto* (the expert) — each keyed to a 19th-century painting of a Risorgimento figure. From there, the site unfolds room by room (Introduzione → Sala 1 → Sala 2 → Sala 3), mixing short paragraphs of commentary, photo carousels of artworks and artefacts, embedded videos, and a KnightLab timeline. A language switcher plus an ElevenLabs text-to-speech button make the content more accessible.
 
 ## Products in this system
 
@@ -70,8 +70,6 @@ ui_kits/web/                 — Pixel-accurate recreation of the site
 - **Sentence case** for body heading titles inside rooms ("Introduzione", "Introduzione alla Sala", "Media e Risorse", "Scorri la linea del Tempo!").
 - **Button labels** are short imperatives in sentence case: *"Inizia l'avventura", "Scopri il Risorgimento", "Tuffati nel passato", "Riscopri la storia"*. Language buttons are in title case ("Italiano", "English").
 
-### I / You
-*You* (tu). Never *I*, never *we*. The institution refers to itself in the third person: *"il Museo celebra chi ha saputo mettersi al servizio di un ideale comune."*
 
 ### Emoji & symbols
 Use is **minimal and utilitarian**, never decorative.
@@ -84,13 +82,8 @@ Use is **minimal and utilitarian**, never decorative.
 - Accessibility label: *"Ascolta il testo"* (Listen to the text) with aria-live="assertive" while reading.
 - Room footer CTA is always the **name of the next room** as the button label: *"Sala 1"*, *"Sala 2"* — not "Next" or "Continue".
 
-### The vibe
-Museum-curator-over-your-shoulder. Encouraging, a little romantic about history, never condescending. The young-visitor profile gets the same respectful tone as the expert profile — only the complexity of the referenced material changes.
 
 ## VISUAL FOUNDATIONS
-
-### Overall vibe
-**Google-Sites-like chrome around painterly content.** The UI is intentionally plain — white cards, soft grey page background, one red accent — and gets out of the way of the artwork. Risorgimento-era oil paintings and photographs of the museum rooms do the visual heavy lifting.
 
 ### Colors
 - **Primary: red `#dc2626`** (`--emu-red-500`) — extracted from the exclamation mark in the logo's "!R" mark. Used exclusively for the primary CTA. Hover darkens to `#b91c1c`, active to `#991b1b`. The earlier stylesheet (`style.css`) transitioned primary-to-charcoal on hover; the later WCAG-corrected stylesheet (`style2.css`) uses red→darker-red instead. **We adopt the darker-red behavior** — it reads as "the same action, pressed" rather than "a different action".
@@ -108,9 +101,6 @@ Museum-curator-over-your-shoulder. Encouraging, a little romantic about history,
 - Navbar: flat `#ffffff` with a `#e6e6e6` bottom border.
 - Hero: **full-bleed photograph** (`.intestation`) with a dark scrim overlay `rgba(0,0,0,0.45)` and white, bold title centered. No gradients, no tinted gels, no illustrations — just the photo and the scrim.
 - Cards: flat white with a 1px `#ececec` border and a soft shadow. No inner gradient, no patterned fill.
-
-### Imagery
-**Warm, slightly desaturated, oil-paint-led.** The profile portraits are 19th-century Italian paintings (Altamura, Induno, Dugoni-attrib, Sindor/Dugoni — documented in `assets/profiles/`). Room photography is architectural and museographic — vaulted ceilings, statues, illuminated display cases, framed artefacts on red velvet. Overall palette of the imagery skews **warm**: reds, ochres, wood browns, cream walls. No black-and-white, no grain filter, no high-contrast photography. Images are shown on cards with `aspect-ratio: 4/3` and `object-fit: cover`, and in heroes as full-bleed cover backgrounds.
 
 ### Motion
 - **Short, functional, fades and colour shifts only.** Durations 0.15s (links, nav, accordion) and 0.2s (cards, buttons). Easing: plain `ease`.
@@ -211,6 +201,3 @@ Inside: a 4:3 cover image, then `1.25rem` padding body with `gap: 0.75rem` betwe
 
 The design system also proposes an **optional serif companion** (`--emu-font-serif`: Cormorant Garamond / EB Garamond / Georgia) for off-site materials such as decks or editorial layouts. Cormorant Garamond and EB Garamond are available on Google Fonts; Georgia is a system fallback. **This serif is not loaded by default** and is not used by `ui_kits/web/`. Flag to the user if they want us to commit to a specific serif.
 
-## CAVEATS
-
-- **The translation API call** in `server.js` is a minimal OpenAI proxy; it is not part of the visual system and is documented only as context.
