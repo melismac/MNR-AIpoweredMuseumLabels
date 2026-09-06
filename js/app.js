@@ -17,9 +17,9 @@
     },
     cu: {
       key: 'cu',
-      name_it: 'Il Curioso',
+      name_it: 'La Curiosa',
       name_en: 'The Curious',
-      img: 'img/profiles/cospiratore_romantico_icon.jpg',
+      img: 'img/profiles/contessa2.jpg',
     },
     vi: {
       key: 'vi',
@@ -29,9 +29,9 @@
     },
     es: {
       key: 'es',
-      name_it: "L'Esperto",
+      name_it: "L'Esperta",
       name_en: 'The Expert',
-      img: 'img/profiles/cavour_icon.jpeg',
+      img: 'img/profiles/olimpia2.jpg',
     },
   };
   window.EMU_PROFILES = PROFILES;
@@ -230,20 +230,106 @@
     wrapper.appendChild(line);
   }
 
-  // ---------- GLightbox ----------
-  function initGlightbox() {
-    if (typeof GLightbox === 'undefined') return;
-    document.querySelectorAll('#accordion-media img').forEach((img) => {
-      if (img.closest('a')) return;
-      const a = document.createElement('a');
-      a.href = img.src;
-      a.classList.add('glightbox');
-      // a.setAttribute('data-description', img.alt || '');
-      img.parentNode.insertBefore(a, img);
-      a.appendChild(img);
+// ---------- GLightbox ----------
+function initGlightbox() {
+  if (typeof GLightbox === 'undefined') return;
+  document.querySelectorAll('#accordion-media img').forEach((img) => {
+    if (img.closest('a')) return;
+    const a = document.createElement('a');
+    a.href = img.getAttribute('src');
+    a.classList.add('glightbox');
+    const fig = img.closest('figure');
+    const cap = fig ? fig.querySelector('figcaption') : null;
+    if (cap) a.setAttribute('data-description', cap.textContent.trim());
+    // raggruppa le immagini per carosello → gallerie separate
+    const carousel = img.closest('.carousel');
+    if (carousel && carousel.id) a.setAttribute('data-gallery', carousel.id);
+    img.parentNode.insertBefore(a, img);
+    a.appendChild(img);
+  });
+  GLightbox({ selector: '.glightbox', touchNavigation: true, loop: false });
+}
+
+  // ---------- Linea del tempo scrollabile ----------
+    window.initTimeline = function initTimeline() {
+    const timeline = document.querySelector('[data-emu-timeline]');
+    if (!timeline) return;
+    const scroller = timeline.querySelector('.emu-timeline__scroller');
+    const track = timeline.querySelector('.emu-timeline__track');
+    const fill = timeline.querySelector('.emu-timeline__fill');
+    const counterYear = timeline.querySelector('[data-timeline-year]');
+    const counterIndex = timeline.querySelector('[data-timeline-index]');
+    const prevBtn = timeline.querySelector('[data-timeline-prev]');
+    const nextBtn = timeline.querySelector('[data-timeline-next]');
+    if (!scroller || !track || !fill) return;
+
+    const items = Array.from(track.querySelectorAll('.emu-timeline__item'));
+    if (!items.length) return;
+    const years = items.map((it) => (it.getAttribute('data-year') || '').trim());
+    let activeIndex = 0;
+
+    let raf = null;
+    function measure() {
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      const mid = scroller.scrollLeft + scroller.clientWidth / 2 - (track.offsetLeft || 0);
+      let i = 0, best = Infinity;
+      items.forEach((c, n) => {
+        const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid);
+        if (d < best) { best = d; i = n; }
+      });
+      if (scroller.scrollLeft <= 1) i = 0;
+      else if (maxScroll > 0 && scroller.scrollLeft >= maxScroll - 1) i = items.length - 1;
+
+      activeIndex = i;
+      const active = items[i];
+      const w = track.offsetWidth || 1;
+      const pct = i === items.length - 1
+        ? 100
+        : Math.min(100, Math.max(0, ((active.offsetLeft + active.offsetWidth / 2) / w) * 100));
+      fill.style.width = pct + '%';
+      if (counterYear) counterYear.textContent = years[i] || years[0] || '';
+      if (counterIndex) counterIndex.textContent = (i + 1) + ' / ' + items.length;
+      if (prevBtn) prevBtn.disabled = i <= 0;
+      if (nextBtn) nextBtn.disabled = i >= items.length - 1;
+    }
+    function goTo(i) {
+      i = Math.min(items.length - 1, Math.max(0, i));
+      const target = items[i];
+      if (!target) return;
+      const maxLeft = scroller.scrollWidth - scroller.clientWidth;
+      const cardRect = target.getBoundingClientRect();
+      const scRect = scroller.getBoundingClientRect();
+      const delta = (cardRect.left + cardRect.width / 2) - (scRect.left + scRect.width / 2);
+      let left = scroller.scrollLeft + delta;
+      left = Math.max(0, Math.min(left, maxLeft));
+      scroller.scrollTo({ left: left, behavior: 'smooth' });
+    }
+    
+    function currentIndex() {
+      const scRect = scroller.getBoundingClientRect();
+      const mid = scRect.left + scRect.width / 2;
+      let best = 0, bd = Infinity;
+      items.forEach((c, n) => {
+        const r = c.getBoundingClientRect();
+        const d = Math.abs((r.left + r.width / 2) - mid);
+        if (d < bd) { bd = d; best = n; }
+      });
+      return best;
+    }
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
+
+    scroller.addEventListener('scroll', () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => { raf = null; measure(); });
     });
-    GLightbox({ touchNavigation: true, loop: false });
+    window.addEventListener('resize', measure);
+    measure();
   }
+
+
+
+
 
   // ---------- Cookie consent banner ----------
   function initCookieBanner() {
@@ -355,6 +441,8 @@
     setTimeout(trackSalaIfPresent, 200);
     initGlightbox();
 
+    initTimeline();   // ← timeline scrollabile
+
     // Aggiorna profilo automaticamente dai link del menu laterale
     document.querySelectorAll('.offcanvas .list-group-item-action[href]').forEach((link) => {
       link.addEventListener('click', () => {
@@ -367,6 +455,11 @@
     });
 
   }); // ← unica chiusura DOMContentLoaded
+
+
+
+
+
 
 })(); // ← chiusura IIFE
 
