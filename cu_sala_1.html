@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Il Curioso — Sala 1 · Esplora il Museo</title>
+  <title>La Curiosa — Sala 1 · Esplora il Museo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <link rel="stylesheet" href="css/style.css?v=2" />
 </head>
 <body class="bg-body-tertiary" data-profile="cu" data-sala="1">
@@ -74,7 +75,7 @@
               <h2 class="accordion-header" id="h-curioso">
                 <button class="accordion-button collapsed" type="button"
                         data-bs-toggle="collapse" data-bs-target="#c-curioso" aria-expanded="false" aria-controls="c-curioso"
-                        data-it="Il Curioso" data-en="The Curious">Il Curioso</button>
+                        data-it="La Curiosa" data-en="The Curious">La Curiosa</button>
               </h2>
               <div id="c-curioso" class="accordion-collapse collapse" aria-labelledby="h-curioso" data-bs-parent="#profilesAccordion">
                 <div class="accordion-body p-0">
@@ -110,7 +111,7 @@
               <h2 class="accordion-header" id="h-esperto">
                 <button class="accordion-button collapsed" type="button"
                         data-bs-toggle="collapse" data-bs-target="#c-esperto" aria-expanded="false" aria-controls="c-esperto"
-                        data-it="L'Esperto" data-en="The Expert">L'Esperto</button>
+                        data-it="L'Esperta" data-en="The Expert">L'Esperta</button>
               </h2>
               <div id="c-esperto" class="accordion-collapse collapse" aria-labelledby="h-esperto" data-bs-parent="#profilesAccordion">
                 <div class="accordion-body p-0">
@@ -147,13 +148,18 @@
       <section id="sala-introduction" class="mb-4">
         <div class="d-flex flex-column flex-md-row align-items-start gap-4 mb-3">
           <div class="flex-grow-1">
-            <h2 class="h3 mb-3" data-it="Conosci il Risorgimento?" data-en="Do you know the Risorgimento?"">Conosci il Risorgimento?</h2>
+            <h2 class="h3 mb-3" data-it="Conosci il Risorgimento?" data-en="Do you know the Risorgimento?">Conosci il Risorgimento?</h2>
             <div id="sala-intro-text">
-              <p class="text-secondary mb-0"
-                 data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                 data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          
+              <p class="text-secondary mb-3"
+                 data-it="Il <b>Risorgimento</b> è l'epoca di rinascita che ha unito l'Italia. La nostra penisola era divisa in molti Stati e dominata da potenze straniere prima di questa svolta. L'Italia è diventata finalmente un paese libero e indipendente grazie a questo cammino."
+                 data-en="The <b>Risorgimento</b> is the era of rebirth that united Italy. Our peninsula was divided into many states and dominated by foreign powers before this turning point. Italy became finally a free and independent country thanks to this journey.">
+                Il <b>Risorgimento</b> è l'epoca di rinascita che ha unito l'Italia. La nostra penisola era divisa in molti Stati e dominata da potenze straniere prima di questa svolta. L'Italia è diventata finalmente un paese libero e indipendente grazie a questo cammino.       
               </p>
+              <p class="text-secondary mb-3"
+                 data-it="Il <b>Risorgimento</b> è l'epoca di rinascita che ha unito l'Italia. La nostra penisola era divisa in molti Stati e dominata da potenze straniere prima di questa svolta. L'Italia è diventata finalmente un paese libero e indipendente grazie a questo cammino."
+                 data-en="The <b>Risorgimento</b> is the era of rebirth that united Italy. Our peninsula was divided into many states and dominated by foreign powers before this turning point. Italy became finally a free and independent country thanks to this journey.">
+                Tu puoi riscoprire in questa sala i grandi <b>protagonisti</b> che hanno lottato per la patria.
+                </p>
           </div>
           </div>
 
@@ -178,7 +184,7 @@
 
 
         <!-- Immagine blocco 1 — sempre visibile -->
-        <!-- BLOCCO 1 — primo aperto -->
+        <!-- BLOCCO 1 — chiuso -->
         <div class="accordion mb-3" id="salaAccordion1_pv_1">
           <div class="accordion-item">
             <h2 class="accordion-header" id="sala1_pv_1">
@@ -189,27 +195,86 @@
                 Chi era Vittorio Emanuele II?
               </button>
             </h2>
-            <div id="sala1Content_pv_1" class="accordion-collapse collapse show"
+            <div id="sala1Content_pv_1" class="accordion-collapse collapse"
                 aria-labelledby="sala1_pv_1" data-bs-parent="#salaAccordion1_pv_1">
               <div class="accordion-body">
-                <p class="text-secondary mb-0"
-                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <p class="text-secondary mb-3"
+                  data-it="Osserva questo grande <b>quadro</b> di Giuseppe Camino del 1861. Il dipinto ritrae Vittorio Emanuele II, il primo re dell'Italia unita. Sotto il suo regno i patrioti hanno unito il paese con le guerre d'Indipendenza. L'opera decorava l'aula provvisoria dei deputati, costruita nel cortile di Palazzo Carignano."
+                  data-en="Look at this great <b>painting</b> by Giuseppe Camino from 1861. The painting depicts Vittorio Emanuele II, the first king of the united Italy. Under his reign, patriots united the country with the wars of independence. The work decorated the temporary assembly room of the deputies, built in the courtyard of Palazzo Carignano.">
+                  Osserva questo grande <b>quadro</b> di Giuseppe Camino del 1861. Il dipinto ritrae Vittorio Emanuele II, il primo re dell'Italia unita. Sotto il suo regno i patrioti hanno unito il paese con le guerre d'Indipendenza. L'opera decorava l'aula provvisoria dei deputati, costruita nel cortile di Palazzo Carignano.
                 </p>
+                <p class="text-secondary mb-3"
+                  data-it="Sotto la tela puoi notare una teca con i <b>cimeli</b> del sovrano. Questa collezione custodisce le sue medaglie e la spada usata in battaglia. Gli oggetti sono arrivati a Torino nel 1878 come risarcimento per la sepoltura del re a Roma. Questo dono ha fatto nascere il nostro <b>museo</b>."
+                  data-en="Under the painting you can see a case with the <b>mementos</b> of the sovereign. This collection houses his medals and the sword used in battle. The objects arrived in Turin in 1878 as compensation for the king's burial in Rome. This gift gave birth to our <b> museum</b>.">
+                  Sotto la tela puoi notare una teca con i <b>cimeli</b> del sovrano. Questa collezione custodisce le sue medaglie e la spada usata in battaglia. Gli oggetti sono arrivati a Torino nel 1878 come risarcimento per la sepoltura del re a Roma. Questo dono ha fatto nascere il nostro <b>museo</b>.                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Immagine blocco 1 — sempre visibile -->
+        <!-- Immagine blocco 1 — carosello sempre visibile -->
+
+
         <div class="mb-4">
-          <img src="img/room_1/vittorio_emanuele_ritratto.jpg"
-              class="d-block w-100 rounded-4 single-img"
-              data-it-alt="Ritratto di Vittorio Emanuele II di Giuseppe Camino."
-              data-en-alt="Portrait of Vittorio Emanuele II by Giuseppe Camino."
-              alt="Ritratto di Vittorio Emanuele II di Giuseppe Camino."
-              loading="lazy" />
+          <div id="carousel_pv_1" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active natural">
+                <figure class="mb-0">
+                  <img src="img/room_1/vittorio_emanuele_ritratto.jpg" class="d-block w-100 rounded-4"
+                      data-it-alt="Ritratto di Vittorio Emanuele II"
+                      data-en-alt="Portrait of Vittorio Emanuele II"
+                      alt="Ritratto di Vittorio Emanuele II" loading="lazy" />
+                  <figcaption class="img-caption"
+                              data-it="Ritratto di Vittorio Emanuele II"
+                              data-en="Portrait of Vittorio Emanuele II">
+                    Ritratto di Vittorio Emanuele II
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="carousel-item natural">
+                <figure class="mb-0">
+                  <img src="img/room_1/cimeli.jpg" class="d-block w-100 rounded-4"
+                      data-it-alt="Cimeli di Vittorio Emanuele II"
+                      data-en-alt="Relics of Vittorio Emanuele II"
+                      alt="Cimeli di Vittorio Emanuele II" loading="lazy" />
+                  <figcaption class="img-caption"
+                              data-it="Cimeli di Vittorio Emanuele II"
+                              data-en="Relics of Vittorio Emanuele II">
+                    Cimeli di Vittorio Emanuele II
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="carousel-item natural">
+                <figure class="mb-0">
+                  <img src="img/room_1/donazione_cimeli_illustrazione_italiana.jpg" class="d-block w-100 rounded-4"
+                      data-it-alt="Donazione dei cimeli - Illustrazione italiana"
+                      data-en-alt="Donation of the relics - Illustrazione Italiana"
+                      alt="Donazione dei cimeli - Illustrazione italiana" loading="lazy" />
+                  <figcaption class="img-caption"
+                              data-it="Donazione dei cimeli — Illustrazione Italiana"
+                              data-en="Donation of the relics — Illustrazione Italiana">
+                    Donazione dei cimeli — Illustrazione Italiana
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="0"
+                      class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="2"
+                      aria-label="Slide 3"></button>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
+            </button>
+          </div>
         </div>
 
 
@@ -221,17 +286,27 @@
               <button class="accordion-button collapsed" type="button"
                       data-bs-toggle="collapse" data-bs-target="#sala2Content_pv_1"
                       aria-expanded="false" aria-controls="sala2Content_pv_1"
-                      data-it="Come è nato il Museo?" data-en="How was the museum founded?">
-                Come è nato il Museo?
+                      data-it="Chi sono Cavour e Garibaldi?" data-en="Who were Cavour and Garibaldi?">
+                Chi sono Cavour e Garibaldi?
               </button>
             </h2>
             <div id="sala2Content_pv_1" class="accordion-collapse collapse"
                 aria-labelledby="sala2_pv_1" data-bs-parent="#salaAccordion2_pv_1">
               <div class="accordion-body">
-                <p class="text-secondary mb-0"
-                  data-it="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <p class="text-secondary mb-3"
+                  data-it="Tu puoi osservare due busti di marmo vicino alla porta a vetri. Questi ritratti raffigurano il conte di Cavour e il generale Garibaldi. Tu puoi notare gli occhiali rotondi di Cavour e la barba con il cappello di Garibaldi."
+                  data-en="You can observe two marble busts near the glass door. These portraits depict Count Cavour and General Garibaldi. You can notice Cavour's round glasses and Garibaldi's beard with his hat.">
+                  Tu puoi osservare due busti di marmo vicino alla porta a vetri. Questi ritratti raffigurano il conte di Cavour e il generale Garibaldi. Tu puoi notare gli occhiali rotondi di Cavour e la barba con il cappello di Garibaldi.
+                </p>
+                <p class="text-secondary mb-3"
+                  data-it="I due personaggi rappresentano le <b>due anime</b> dell'Unificazione italiana. Cavour guida la politica moderata e la diplomazia. Garibaldi incarna invece l'anima popolare e i volontari."
+                  data-en="The two figures represent the <b>two souls</b> of Italian unification. Cavour leads the moderate politics and diplomacy. Garibaldi embodies instead the popular soul and the volunteers.">
+                  I due personaggi rappresentano le <b>due anime</b> dell'Unificazione italiana. Cavour guida la politica moderata e la diplomazia. Garibaldi incarna invece l'anima popolare e i volontari.                
+                </p>
+                <p class="text-secondary mb-3"
+                  data-it="Il museo accosta le sculture fin dal 1884. Questo gesto lancia un messaggio di <b>pacificazione</b> nazionale oltre le loro differenze politiche"
+                  data-en="The museum places the sculptures together since 1884. This gesture conveys a message of <b>national reconciliation</b> beyond their political differences">
+                  Il museo accosta le sculture fin dal 1884. Questo gesto lancia un messaggio di <b>pacificazione</b> nazionale oltre le loro differenze politiche
                 </p>
               </div>
             </div>
@@ -241,32 +316,32 @@
         <!-- Immagine blocco 2 — sempre visibile -->
         <!-- Immagine blocco 2 — carosello sempre visibile -->
           <div class="mb-4">
-            <div id="carousel_pv_1" class="carousel slide" data-bs-ride="carousel">
+            <div id="carousel_pv_2" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active natural">
-                  <img src="img/room_1/cimeli.jpg" class="d-block w-100 rounded-4"
-                      data-it-alt="Cimeli di Vittorio Emanuele II"
-                      data-en-alt="Relics of Vittorio Emanuele II"
-                      alt="Cimeli di Vittorio Emanuele II" loading="lazy" />
+                  <img src="img/room_1/busto_cavour.jpg" class="d-block w-100 rounded-4"
+                      data-it-alt="Busto di Cavour"
+                      data-en-alt="Bust of Cavour"
+                      alt="Busto di Cavour" loading="lazy" />
                 </div>
                 <div class="carousel-item natural">
-                  <img src="img/room_1/donazione_cimeli_illustrazione_italiana.jpg" class="d-block w-100 rounded-4"
-                      data-it-alt="Donazione dei cimeli - Illustrazione italiana"
-                      data-en-alt="Donation of the relics - Illustratione ITaliana"
-                      alt="Donazione dei cimeli - Illustrazione italiana" loading="lazy" />
+                  <img src="img/room_1/garibaldi_busto.jpg" class="d-block w-100 rounded-4"
+                      data-it-alt="Ritratto di Garibaldi"
+                      data-en-alt="Portrait of Garibaldi"
+                      alt="Ritratto di Garibaldi" loading="lazy" />
                 </div>
               </div>
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="0"
+                <button type="button" data-bs-target="#carousel_pv_2" data-bs-slide-to="0"
                         class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carousel_pv_1" data-bs-slide-to="1"
+                <button type="button" data-bs-target="#carousel_pv_2" data-bs-slide-to="1"
                         aria-label="Slide 2"></button>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel_pv_2" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden" data-it="Precedente" data-en="Previous">Precedente</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel_pv_1" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel_pv_2" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden" data-it="Successivo" data-en="Next">Successivo</span>
               </button>
