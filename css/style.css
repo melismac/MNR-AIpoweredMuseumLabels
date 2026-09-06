@@ -200,7 +200,7 @@ p { line-height: 1.6; }
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center 25%;
-  height: 280px;
+  height: 200px;
   display: block;
 }
 
@@ -609,6 +609,15 @@ h1, h2, h3 { letter-spacing: .2px; line-height: 1.3; }
 }
 */
 
+/* Didascalia centrata dentro lo zoom GLightbox */
+.glightbox-clean .gslide-description {
+  text-align: center;
+}
+.glightbox-clean .gslide-title,
+.glightbox-clean .gdesc-inner {
+  text-align: center;
+}
+
 
 /* 25) Linea decorativa sotto titolo banner */
 .intestation-line {
@@ -619,4 +628,212 @@ h1, h2, h3 { letter-spacing: .2px; line-height: 1.3; }
   border-radius: 2px;
   position: relative;
   z-index: 2;
+}
+
+/* 26) Frecce carosello più visibili */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  padding: 1.2rem;
+  background-size: 50% 50%;
+}
+
+
+/* 27) Didascalia immagini carosello */
+.img-caption {
+  font-size: 0.85rem;
+  color: #5f6368;
+  text-align: center;
+  padding: 0.5rem 0.75rem 0;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+
+
+/* 28) Linea del tempo scrollabile (sostituisce iframe KnightLab) */
+.emu-timeline {
+  position: relative;
+  width: 100%;
+  padding: 0.5rem 0 0.25rem;
+}
+.emu-timeline__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-bottom: 0.5rem;
+}
+.emu-timeline__intro {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #5f6368;
+  margin: 0;
+}
+.emu-timeline__scroller {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 1.5rem 0.25rem 0;
+}
+.emu-timeline__scroller::-webkit-scrollbar { display: none; }
+.emu-timeline__track {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: max-content;
+}
+.emu-timeline__rail {
+  position: absolute;
+  left: 0; right: 0; top: 33px;
+  height: 2px;
+  background: #e6e6e6;
+  border-radius: 999px;
+}
+.emu-timeline__fill {
+  position: absolute;
+  left: 0; top: 33px;
+  height: 2px;
+  background: #dc2626;
+  border-radius: 999px;
+  width: 0;
+  transition: width 0.18s ease;
+}
+.emu-timeline__item {
+  flex: 0 0 auto;
+  width: min(76vw, 300px);
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.emu-timeline__year {
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #202124;
+}
+.emu-timeline__dot-wrap {
+  position: relative;
+  height: 20px;
+}
+.emu-timeline__dot {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 14px; height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid #dc2626;
+  box-sizing: border-box;
+}
+.emu-timeline__card {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(60, 64, 67, 0.10);
+  padding: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.emu-timeline__card h3 {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
+  color: #202124;
+}
+.emu-timeline__card p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #5f6368;
+}
+.emu-timeline__counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0.25rem 0;
+}
+.emu-timeline__counter-year {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #3c4043;
+}
+.emu-timeline__counter-index {
+  font-size: 0.8125rem;
+  color: #5f6368;
+}
+
+/* 28-bis) Timeline — ottimizzazioni mobile */
+@media (prefers-reduced-motion: reduce) {
+  .emu-timeline__scroller { scroll-behavior: auto; }
+  .emu-timeline__fill { transition: none; }
+}
+.emu-timeline__scroller-wrap {
+  position: relative;
+}
+.emu-timeline__scroller-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 32px;
+  background: linear-gradient(to right, rgba(248,249,250,0), #f8f9fa);
+  pointer-events: none;
+  z-index: 1;
+}
+@media (max-width: 576px) {
+  .emu-timeline__scroller { padding-left: 1rem; padding-right: 1rem; }
+  .emu-timeline__item { width: min(82vw, 300px); }
+  .emu-timeline__card { padding: 1rem; }
+  .emu-timeline__card h3 { font-size: 1rem; }
+}
+
+/* 28-ter) Frecce di navigazione timeline */
+.emu-timeline__nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.emu-timeline__arrow {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dadce0;
+  background: #fff;
+  color: #3c4043;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.emu-timeline__arrow svg { width: 20px; height: 20px; display: block; }
+.emu-timeline__arrow:hover:not(:disabled),
+.emu-timeline__arrow:focus-visible:not(:disabled) {
+  background: #fdecec;
+  border-color: #dc2626;
+  color: #b91c1c;
+}
+.emu-timeline__arrow:active:not(:disabled) { transform: scale(0.96); }
+.emu-timeline__arrow:disabled { opacity: 0.4; cursor: default; }
+
+
+.emu-timeline-section {
+  background: #f1f3f4;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 4rem 0 2.5rem;
+  margin: 4rem 0 2.5rem;   /* ← prima era 2.5rem 0 */
 }
