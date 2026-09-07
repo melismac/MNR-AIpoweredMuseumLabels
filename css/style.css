@@ -640,6 +640,30 @@ h1, h2, h3 { letter-spacing: .2px; line-height: 1.3; }
 }
 
 
+/* 26b) Indicatori carosello — trattini, staccati dalla didascalia */
+.carousel-indicators {
+  position: static;      /* non più sovrapposti all'immagine */
+  margin: 0.6rem 0 0;    /* spazio sopra */
+  padding: 0;
+}
+.carousel-indicators [data-bs-target] {
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 0;
+  opacity: 1;
+  margin-inline: 4px;
+  transition: background-color .2s;
+}
+.carousel-indicators [data-bs-target].active {
+  background-color: #dc2626; /* rosso del sito */
+}
+
+/* stacca la didascalia dagli indicatori */
+.img-caption {
+  margin-top: 0.4rem;
+}
 /* 27) Didascalia immagini carosello */
 .img-caption {
   font-size: 0.85rem;
@@ -836,4 +860,13 @@ h1, h2, h3 { letter-spacing: .2px; line-height: 1.3; }
   border-bottom: 1px solid #e6e6e6;
   padding: 4rem 0 2.5rem;
   margin: 4rem 0 2.5rem;   /* ← prima era 2.5rem 0 */
+}
+
+
+/* 29) Distanzia la didascalia SOLO per l'immagine dei cannoni nel lightbox */
+.gslide-cannoni .gslide-description {
+  padding-top: 22px;
+}
+.gslide-cannoni .gdesc-inner {
+  padding-top: 28px !important;
 }
