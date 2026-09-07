@@ -244,6 +244,12 @@ function initGlightbox() {
     // raggruppa le immagini per carosello → gallerie separate
     const carousel = img.closest('.carousel');
     if (carousel && carousel.id) a.setAttribute('data-gallery', carousel.id);
+
+    // distanzia la didascalia solo per una specifica immagine
+    if ((img.getAttribute('src') || '').includes('cannoni')) {
+      a.setAttribute('data-glightbox', 'class: gslide-cannoni');
+    }
+
     img.parentNode.insertBefore(a, img);
     a.appendChild(img);
   });
@@ -457,6 +463,14 @@ function initGlightbox() {
   }); // ← unica chiusura DOMContentLoaded
 
 
+  // Avvio timeline indipendente (immune a errori di altre init)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      try { initTimeline(); } catch (e) { console.error('timeline errore:', e); }
+    });
+  } else {
+    try { initTimeline(); } catch (e) { console.error('timeline errore:', e); }
+  }
 
 
 
