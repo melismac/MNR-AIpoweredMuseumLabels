@@ -870,3 +870,58 @@ h1, h2, h3 { letter-spacing: .2px; line-height: 1.3; }
 .gslide-cannoni .gdesc-inner {
   padding-top: 28px !important;
 }
+
+
+
+/* 30) Mappa interattiva */
+
+/* ===== Mappa (Leaflet) ===== */
+.emu-mappa {
+  margin-bottom: 1.5rem;
+}
+.emu-mappa h2 {
+  color: #202124;
+  margin-bottom: 1rem;
+}
+.emu-mappa__canvas {
+  height: 450px;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Popup: coerenti con il resto del sito */
+.emu-mappa__canvas .leaflet-popup-content {
+  width: 220px !important;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.emu-mappa__canvas .leaflet-popup-content img {
+  display: block;
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0 0 8px 0;
+}
+.emu-mappa__canvas .leaflet-popup-content h3 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  color: #202124;
+}
+.emu-mappa__canvas .leaflet-popup-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #5f6368;
+}
+/* Marker e link nel colore primario del sito */
+.emu-mappa__canvas .leaflet-popup-content a {
+  color: #dc2626;
+}
+.emu-mappa__canvas .leaflet-popup-tip {
+  border-radius: 2px;
+}
+
+/* Su mobile la mappa è un po' più bassa */
+@media (max-width: 576px) {
+  .emu-mappa__canvas { height: 360px; }
+}
