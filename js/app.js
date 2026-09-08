@@ -65,6 +65,7 @@
     opts = opts || {};
     localStorage.setItem('language', lang);
     applyLanguage(lang);
+    if (window.EMU_updateMappaLang) window.EMU_updateMappaLang(lang);
     if (opts.track !== false) {
       gaEvent('lingua_selezionata', { lingua: lang });
     }
@@ -448,6 +449,7 @@ function initGlightbox() {
     initGlightbox();
 
     initTimeline();   // ← timeline scrollabile
+    initMappa(); // ← mappa Leaflet
 
     // Aggiorna profilo automaticamente dai link del menu laterale
     document.querySelectorAll('.offcanvas .list-group-item-action[href]').forEach((link) => {
@@ -472,7 +474,126 @@ function initGlightbox() {
     try { initTimeline(); } catch (e) { console.error('timeline errore:', e); }
   }
 
+  // ---------- Mappa (Leaflet) ----------
+  window.initMappa = function initMappa() {
+    const el = document.getElementById('mappa-sala3');
+    if (!el || typeof L === 'undefined' || el.dataset.ready === '1') return;
+    el.dataset.ready = '1';
 
+    // I punti del percorso. Per ognuno: coord [lat, lng] e testi in italiano/inglese.
+    // img: link a un'immagine ("" se il punto non ha foto). Usa "img/nomefoto.jpg" per i file locali.
+    // I punti del percorso. Coordinate da inserire: sostituisci i null con [lat, lng].
+    // Per trovarle: tasto destro sul luogo in Google Maps → clic sui numeri in cima al menu.
+    const punti = [
+
+      {
+        coord: [45.06997408850361, 7.686332604680189], // Museo Risrogimento
+        it: { titolo: "Museo Nazionale del Risorgimento Italiano", testo: "Stele del 1706, sala 3 del museo" },
+        en: { titolo: "Pietro Micca Museum", testo: "In the entrance hall of the museum." },
+        img: "img/room_3/stele.jpg"
+      },
+
+      {
+        coord: [45.072629079488664, 7.6682845512617055], // Museo Pietro Micca, via Guicciardini 7A, Torino
+        it: { titolo: "Museo di Pietro Micca", testo: "Nell'atrio d'ingresso del museo." },
+        en: { titolo: "Pietro Micca Museum", testo: "In the entrance hall of the museum." },
+        img: "img/cippi/museo_pietro_micca.jpg"
+      },
+      {
+        coord: [45.09591921150852, 7.7103472734943725], // Via Pergolesi 119, Torino — cortile della scuola
+        it: { titolo: "Scuole Tecniche San Carlo, via Pergolesi 119", testo: "Nel cortile dell'edificio scolastico." },
+        en: { titolo: "School, via Pergolesi 119", testo: "In the courtyard of the school building." },
+        img: "img/cippi/pergolesi_119.jpg"
+      },
+      {
+        coord: [45.092391051771166, 7.711867397323956], // Via Gottardo 273, Torino — cortile case popolari
+        it: { titolo: "Abitazioni private, via Gottardo", testo: "Nel cortile di abitazioni private." },
+        en: { titolo: "Public housing, via Gottardo", testo: "In the courtyard of the public housing." },
+        img: "img/cippi/gottardo263.jpg"
+      },
+      {
+        coord: [45.0970951, 7.6363354], // Pianezza -Istituto Bonafous, strada della Pianezza, Torino
+        it: { titolo: "Via Pianezza", testo: "Pilastrino inserito nel monumento ai caduti." },
+        en: { titolo: "Bonafous Institute", testo: "At the institute, on strada Pianezza." },
+        img: "img/cippi/pianezza.jpg"
+      },
+      {
+        coord: [45.07701573981724, 7.679145222089466],// Santuario della Consolata, piazza della Consolata, Torino
+        it: { titolo: "Santuario di Maria Consolatrice", testo: "Pilastrino all'interno della cancelalta ovest." },
+        en: { titolo: "Church of the Consolata", testo: "In the fenced garden of the church." },
+        img: "img/cippi/consolata.jpg"
+      },
+      {
+        coord: [45.094953,7.677880],// Chiesa Nostra Signora della Salute, Borgo Vittoria, Torino
+        it: { titolo: "Nostra Signora della Salute", testo: "In Borgo Vittoria. Qui si trovano sei altarini: quattro reggono l'ossario dei caduti nell'assedio del 1706, il quinto è la prima pietra posta nelle fondamenta, il sesto è in un monumento parietale del 1937." },
+        en: { titolo: "Our Lady of Health", testo: "In Borgo Vittoria. Six shrines are found here: four support the ossuary of those fallen in the 1706 siege, the fifth is the foundation stone laid in the foundations, the sixth is in a wall monument from 1937." },
+        img: "img/cippi/salute2.jpg"
+      },
+      {
+        coord: null, // Via Giachino 92, Torino — murato nella facciata
+        it: { titolo: "Case di via Giachino", testo: "Murato nella facciata dell'edificio." },
+        en: { titolo: "Houses, via Giachino", testo: "Set into the building's façade." },
+        img: ""
+      },
+      {
+        coord: null, // Strada di Lucento, Torino (via intera: scegli il punto esatto dell'altarino)
+        it: { titolo: "Strada di Lucento", testo: "Murato in un altarino lungo la strada." },
+        en: { titolo: "Strada di Lucento", testo: "Set into a wayside shrine along the road." },
+        img: ""
+      },
+      {
+        coord: null, // Via Verolengo, Torino (via intera: scegli il punto esatto dell'altarino)
+        it: { titolo: "Via Verolengo", testo: "In un altarino al centro della strada." },
+        en: { titolo: "Via Verolengo", testo: "In a shrine at the centre of the road." },
+        img: ""
+      },
+
+      //{
+      //  coord: [45.091405, 7.715459], // Corso Regio Parco / Regio Parco — cortile Manifattura Tabacchi
+        //it: { titolo: "Manifattura Tabacchi", testo: "Nel cortile della Manifattura Tabacchi al Regio Parco" },
+        //en: { titolo: "Tobacco Manufactory", testo: "In the courtyard of the Tobacco Manufactory at Regio Parco" },
+        //img: "",
+     // },
+    ];
+
+    const map = L.map('mappa-sala3').setView([45.07, 7.68], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap', maxZoom: 19
+    }).addTo(map);
+
+    const markers = [];
+    punti.forEach(function (p) {
+      const marker = L.marker(p.coord).addTo(map);
+      marker._emuData = p; // salvo i dati per aggiornare la lingua al volo
+      marker.bindPopup(buildPopup(p, getLang()));
+      markers.push(marker);
+    });
+
+    if (markers.length) {
+      map.fitBounds(L.featureGroup(markers).getBounds(), { padding: [40, 40] });
+    }
+
+    // Ricostruisce il contenuto del popup nella lingua richiesta
+    function buildPopup(p, lang) {
+      const t = (lang === 'en') ? p.en : p.it;
+      let c = '';
+      if (p.img && p.img.trim() !== '') {
+        c += '<img src="' + p.img + '" alt="' + t.titolo + '">';
+      }
+      c += '<h3>' + t.titolo + '</h3><p>' + t.testo + '</p>';
+      return c;
+    }
+
+    // Espongo un aggiornatore lingua, richiamabile quando l'utente cambia IT/EN
+    window.EMU_updateMappaLang = function (lang) {
+      markers.forEach(function (m) {
+        m.setPopupContent(buildPopup(m._emuData, lang));
+      });
+    };
+
+    // Fix per quando la mappa parte in un contenitore non ancora dimensionato
+    setTimeout(function () { map.invalidateSize(); }, 300);
+  };
 
 
 })(); // ← chiusura IIFE
