@@ -26,16 +26,16 @@
 
   /* ── COSTANTI ── */
   const PROFILE_LABELS = {
-    pv: 'Piccolo Visitatore',
-    cu: 'Il Curioso',
-    vi: 'Il Visionario',
-    es: "L'Esperto"
+    pv: 'Il piccolo visitatore',
+    cu: 'La curiosa',
+    vi: 'Il visionario',
+    es: "L'esperta"
   };
   const SALA_LABELS = {
-    '0': 'Introduzione',
-    '1': 'Sala 1',
-    '2': 'Sala 2',
-    '3': 'Sala 3'
+    '0': '0_Intro',
+    '1': '1_Sala 1',
+    '2': '2_Sala 2',
+    '3': '3_Sala 3'
   };
 
   /* ── CONTESTO PAGINA ──
