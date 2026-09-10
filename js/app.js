@@ -390,7 +390,7 @@ function initGlightbox() {
           window.botpressWebChat.onEvent(() => {
             if (tracked) return;
             tracked = true;
-            gaEvent('chatbot_aperto', {});
+          // gaEvent('chatbot_aperto', {});
           }, ['LIFECYCLE.LOADED', 'UI.OPENED']);
         } catch (e) { /* ignore */ }
       }
@@ -403,21 +403,21 @@ function initGlightbox() {
     }, 1000);
   }
 
-  // ---------- Track sala_visitata ----------
-  function trackSalaIfPresent() {
-    const page = document.body;
-    const profileKey = page.getAttribute('data-profile');
-    const salaIdx = page.getAttribute('data-sala');
-    if (profileKey && salaIdx !== null) {
-      gaEvent('sala_visitata', { profilo: profileKey, sala: salaIdx });
-    }
-  }
+// // ---------- Track sala_visitata ----------
+// function trackSalaIfPresent() {
+//   const page = document.body;
+//   const profileKey = page.getAttribute('data-profile');
+//   const salaIdx = page.getAttribute('data-sala');
+//   if (profileKey && salaIdx !== null) {
+//     gaEvent('sala_visitata', { profilo: profileKey, sala: salaIdx });
+//   }
+// }
 
   // ---------- Public: select profile from home cards ----------
   window.EMU_selectProfile = function (key, href) {
     if (PROFILES[key]) {
       localStorage.setItem('selectedProfile', key);
-      gaEvent('profilo_selezionato', { profilo: key });
+      //gaEvent('profilo_selezionato', { profilo: key });
     }
     if (href) {
       setTimeout(() => { window.location.href = href; }, 80);
