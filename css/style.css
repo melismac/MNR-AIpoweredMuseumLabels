@@ -925,3 +925,60 @@ h1, h2, h3 { letter-spacing: .2px; line-height: 1.3; }
 @media (max-width: 576px) {
   .emu-mappa__canvas { height: 360px; }
 }
+
+
+
+
+/* 31 Footer credits + logo UE */
+/* Footer credits */
+.footer-credits {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #80868b;
+}
+
+footer {
+  
+  border-top: 2px solid #dadce0;
+  margin-top: 2rem;
+  padding-top: 1.5 rem;
+}
+
+footer hr {
+  border-color: #ececec;
+  opacity: 1;
+}
+
+
+
+.footer-cc-link {
+  color: inherit;
+  text-decoration: none;
+}
+.footer-cc-link:hover {
+  text-decoration: underline;
+  color: #5f6368;
+}
+
+/* Nota AI in fondo — riga minima e discreta */
+
+
+
+.footer-ai-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #ececec;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: #9aa0a6;
+
+
+}
+.footer-ai-logo {
+  height: 20px;
+  width: auto;
+  flex-shrink: 0;
+}
