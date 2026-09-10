@@ -300,13 +300,37 @@
         <a class="btn btn-primary" href="pv_sala_1.html" data-it="Sala 1 →" data-en="Room 1 →">Sala 1 →</a>
       </section>
 
-      <footer class="pb-4 pt-3">
+      <footer class="pb-2 pt-3">
         <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 text-secondary small">
-          <span>© Esplora il Museo</span>
+          <span>
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it"
+              target="_blank" rel="license noopener"
+              class="footer-cc-link"
+              data-it="CC BY-NC-ND 4.0 · Esplora il Museo"
+              data-en="CC BY-NC-ND 4.0 · Esplora il Museo">CC BY-NC-ND 4.0 · Esplora il Museo  </a>
+          </span>
+
           <span class="text-sm-end" data-it="Museo Nazionale del Risorgimento Italiano — Torino"
                 data-en="National Museum of the Italian Unification — Turin">Museo Nazionale del Risorgimento Italiano — Torino</span>
         </div>
+
+        <hr class="my-2">
+
+        <p class="footer-credits mb-0"
+           data-it="Progetto di ricerca del Dottorato Nazionale in Heritage Science, in collaborazione con Sapienza Università di Roma e Università di Torino (HighESt Lab. Big Data and AI Lab), a cura di Melissa Macaluso."
+           data-en="Research project of the National PhD in Heritage Science, in collaboration with Sapienza University of Rome and the University of Turin (HighESt Lab. Big Data and AI Lab), curated by Melissa Macaluso.">Progetto di ricerca del Dottorato Nazionale in Heritage Science, in collaborazione con Sapienza Università di Roma e Università di Torino (HighESt Lab. Big Data and AI Lab), a cura di Melissa Macaluso.</p>
+
+        <div class="footer-ai-note">
+          <img src="img/label_ai_eu.png"
+               class="footer-ai-logo flex-shrink-0"
+               data-it-alt="Logo. Contenuto generato con AI generativa"
+               data-en-alt="Icon. Generated content with AI generative"
+               alt="Logo. Contenuto generato con AI generativa">
+          <span data-it="Contenuti generati con IA generativa, non sottoposti a correzione umana per i fini di ricerca del progetto."
+                data-en="Content generated with generative AI, not human-reviewed, for the project's research purposes.">Contenuti generati con IA generativa, non sottoposti a correzione umana per i fini di ricerca del progetto.</span>
+        </div>
       </footer>
+
     </div>
   </main>
 
@@ -324,25 +348,24 @@
   <script src="https://files.bpcontent.cloud/2026/02/27/15/20260227151357-NCML2CRD.js" defer></script>
   <script>
 
-  window.botpress.on('webchat:initialized', () => {
-    window.botpress.updateUser({
-      data: {
-        profile: "",
-        current_room: ""
-      }
+    window.botpress.on('webchat:initialized', () => {
+      window.botpress.updateUser({
+        data: {
+          profile: "",
+          current_room: ""
+        }
+      })
     })
+
+  window.botpress.on('webchat:opened', async () => {
+    const lastRoom = localStorage.getItem('bp_last_room')
+    if (lastRoom !== 'intro') {
+      localStorage.setItem('bp_last_room', 'intro')
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      await window.botpress.sendMessage("Ciao!/Hello!")
+    }
   })
-
-window.botpress.on('webchat:opened', async () => {
-  const lastRoom = localStorage.getItem('bp_last_room')
-  if (lastRoom !== 'intro') {
-    localStorage.setItem('bp_last_room', 'intro')
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    await window.botpress.sendMessage("Ciao!/Hello!")
-  }
-})
-
-    
+        
   </script>
 </body>
 </html>
