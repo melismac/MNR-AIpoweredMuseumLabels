@@ -26,10 +26,10 @@
 
   /* ── COSTANTI ── */
   const PROFILE_LABELS = {
-    pv: 'Il piccolo visitatore',
-    cu: 'La curiosa',
-    vi: 'Il visionario',
-    es: "L'esperta"
+    pv: 'Piccolo Visitatore',
+    cu: 'Il Curioso',
+    vi: 'Il Visionario',
+    es: "L'Esperto"
   };
   const SALA_LABELS = {
     '0': 'Introduzione',
