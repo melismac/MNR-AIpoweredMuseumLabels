@@ -445,7 +445,7 @@ function initGlightbox() {
 
     initCookieBanner();
     initBotpressTracking();
-    setTimeout(trackSalaIfPresent, 200);
+    // setTimeout(trackSalaIfPresent, 200);
     initGlightbox();
 
     initTimeline();   // ← timeline scrollabile
@@ -529,24 +529,7 @@ function initGlightbox() {
         en: { titolo: "Our Lady of Health", testo: "In Borgo Vittoria. Six shrines are found here: four support the ossuary of those fallen in the 1706 siege, the fifth is the foundation stone laid in the foundations, the sixth is in a wall monument from 1937." },
         img: "img/cippi/salute2.jpg"
       },
-      {
-        coord: null, // Via Giachino 92, Torino — murato nella facciata
-        it: { titolo: "Case di via Giachino", testo: "Murato nella facciata dell'edificio." },
-        en: { titolo: "Houses, via Giachino", testo: "Set into the building's façade." },
-        img: ""
-      },
-      {
-        coord: null, // Strada di Lucento, Torino (via intera: scegli il punto esatto dell'altarino)
-        it: { titolo: "Strada di Lucento", testo: "Murato in un altarino lungo la strada." },
-        en: { titolo: "Strada di Lucento", testo: "Set into a wayside shrine along the road." },
-        img: ""
-      },
-      {
-        coord: null, // Via Verolengo, Torino (via intera: scegli il punto esatto dell'altarino)
-        it: { titolo: "Via Verolengo", testo: "In un altarino al centro della strada." },
-        en: { titolo: "Via Verolengo", testo: "In a shrine at the centre of the road." },
-        img: ""
-      },
+
 
       //{
       //  coord: [45.091405, 7.715459], // Corso Regio Parco / Regio Parco — cortile Manifattura Tabacchi
