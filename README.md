@@ -1,4 +1,4 @@
-# Esplora il Museo — Design System
+# DIDASCALIA - AIpowered Museum Label (Esplora il Museo)
 
 A design system for **Esplora il Museo**, a mobile-first, accessible digital label for the **Museo Nazionale del Risorgimento Italiano** (National Museum of the Italian Unification / *Risorgimento*) in Turin, Italy.
 
