@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
 </head>
@@ -403,7 +404,67 @@
 
 
 
+           <!-- BLOCCO 3 — Cippi -->
+        <div class="accordion mb-3" id="salaAccordion2_es_3">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="sala2_es_3">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#sala2Content_es_3"
+                      aria-expanded="false" aria-controls="sala2Content_es_3"
+                      data-it="La stele del 1706"
+                      data-en="The stele of 1706">
+                      La stele del 1706
+               </button>
+            </h2>
+            <div id="sala2Content_es_3" class="accordion-collapse collapse"
+                aria-labelledby="sala2_es_3" data-bs-parent="#salaAccordion2_es_3">
+              <div class="accordion-body">
+                <p class="text-secondary mb-3"
+                  data-en="This <b>votive stele</b> tells an extraordinary story. This stone belonged to a series of around two hundred small pillars. The soldiers erected them along the line of the French siege. The people affectionately called these monuments 'little altars'."
+                  data-it="Questa <b>stele di ringraziamento</b> racconta una storia straordinaria. Questa pietra apparteneva a una serie di circa duecento pilastrini. I soldati li eressero lungo la linea dell'assedio francese. Il popolo chiamava affettuosamente questi monumenti 'altarini'">
+                Questa <b>stele di ringraziamento</b> racconta una storia straordinaria. Questa pietra apparteneva a una serie di circa duecento pilastrini. I soldati li eressero lungo la linea dell'assedio francese. Il popolo chiamava affettuosamente questi monumenti 'altarini'.
+                </p>
+                <p class="text-secondary mb-3"
+                  data-it="Il duca Vittorio Amedeo II volle la loro costruzione per omaggiare la Beata Vergine della Consolata. Il sovrano era convinto che la Vergine avesse assicurato la vittoria del 1706 contro i Francesi."
+                  data-en="The Duke Victor Amadeus II ordered their construction to honour the Blessed Virgin of the Consolata. The sovereign was convinced that the Virgin had secured the victory of 1706 against the French.">
+                  Il duca Vittorio Amedeo II volle la loro costruzione per omaggiare la Beata Vergine della Consolata. Il sovrano era convinto che la Vergine avesse assicurato la vittoria del 1706 contro i Francesi.              
+                </p>
+                <p class="text-secondary mb-3"
+                  data-it="Tu oggi puoi riscoprire solo una quindicina di questi pilastrini sparsi per le vie di Torino. Essi rappresentano una affascinante <b>traccia nascosta<b> della nostra storia cittadina."
+                  data-en="Today you can rediscover only around fifteen of these small pillars scattered through the streets of Turin. They represent a fascinating <b>hidden trace</b> of our city's history.">
+                  Tu oggi puoi riscoprire solo una quindicina di questi pilastrini sparsi per le vie di Torino. Essi rappresentano una affascinante <b>traccia nascosta</b> della nostra storia cittadina.              
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Immagine blocco 3 — cippi -->
+        <div class="mb-4">
+          <figure>
+          <img src="img/room_3/stele.jpg"
+              class="d-block w-100 single-img"
+              data-it-alt="Stele"
+              data-en-alt="Memorial for the thanksgiving to the Virgin of Consolation"
+              alt="Stele"
+              loading="lazy" />
+          <figcaption class="img-caption"
+                      data-it="Stele di ringraziamento alla Vergine della Consolata"
+                      data-en="Memorial for the thanksgiving to the Virgin of Consolation">
+            Stele di ringraziamento alla Vergine della Consolata
+          </figcaption>
+          </figure>
+        </div>
+
       </section>
+      <!--mappa interattiva-->
+      <section class="emu-mappa">
+        <h2 class ="h4 text text-center mb-0"data-it="Esplora la Mappa" data-en="Map of the places">Esplora la Mappa</h2>
+        <p class ="mt-3 text-center">Alcuni dei pilastrini commemorativi del 1706 ancora presenti nella città di Torino</p>
+        <div id="mappa-sala3" class="emu-mappa__canvas"></div>
+      </section>
+
+
 
 
 
@@ -570,6 +631,7 @@
   <!--glithbozx per visualizzazione immagini-->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <!--script JS per funzionalità aggiuntive -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/app.js"></script>
   <script src="js/analytics.js"></script>
 
