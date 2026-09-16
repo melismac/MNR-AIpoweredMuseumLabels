@@ -3,6 +3,12 @@
    WCAG 2.1 AA, mobile-first, "Google Sites-like"
    ========================================================= */
 
+/* 0) Tema chiaro */ 
+
+:root {
+  color-scheme: light;
+}
+
 /* 1) Base */
 html, body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
