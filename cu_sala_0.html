@@ -358,7 +358,7 @@
     const lastRoom = localStorage.getItem('bp_last_room')
     if (lastRoom !== 'intro') {
       localStorage.setItem('bp_last_room', 'intro')
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      await new Promise(resolve => setTimeout(resolve, 1500))
       await window.botpress.sendMessage("Ciao!/Hello!")
     }
   })
