@@ -29,7 +29,7 @@
     },
     es: {
       key: 'es',
-      name_it: "L'Esperta",
+      name_it: "La Studiosa",
       name_en: 'The Expert',
       img: 'img/profiles/olimpia2.jpg',
     },
